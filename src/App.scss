@@ -1,5 +1,17 @@
+@import './utils/variables';
+@import './utils/mixins';
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+.App{
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $offWhite;
+  @include row(flex-start, center);
 }

@@ -1,0 +1,171 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+@media (max-width: 768px) {
+    header {
+        height: 55px;
+        padding: 0 1.5rem;
+        background-color: $orange;
+    }
+
+    @keyframes fadeDownClose {
+        from {
+            opacity: 1;
+            top: 0px;
+        }
+
+        to {
+            opacity: 0;
+            top: 4px;
+        }
+    }
+
+    @keyframes fadeUpClose {
+        from {
+            opacity: 1;
+            top: 8px;
+        }
+
+        to {
+            opacity: 0;
+            top: 4px;
+        }
+    }
+
+    @keyframes fadeDownOpen {
+        from {
+            opacity: 0;
+            top: 4px;
+        }
+
+        to {
+            opacity: 1;
+            top: 8px;
+        }
+    }
+
+    @keyframes fadeUpOpen {
+        from {
+            opacity: 0;
+            top: 4px;
+        }
+
+        to {
+            opacity: 1;
+            top: 0px;
+        }
+    }
+
+    .menu-button {
+        top: -1.25px;
+        display: block;
+        width: 25px;
+        height: 17px;
+
+        .dash {
+            position: relative;
+            width: 100%;
+            height: 2.5px;
+            background-color: $offWhite;
+            border-radius: 5px;
+        }
+
+        .dash-2,
+        .dash-3 {
+            animation-duration: .1s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        .dash-2 {
+            top: 0px;
+        }
+
+        .dash-1 {
+            top: 4px;
+        }
+
+        .dash-3 {
+            top: 8px;
+        }
+    }
+
+    .logo h1 {
+        color: $offWhite;
+        top: 0;
+        font-size: 22px;
+        left: 2px;
+    }
+
+    @keyframes openMenu {
+        from {
+            opacity: 0;
+            height: 0;
+        }
+        to {
+            opacity: 1;
+            height: 200px;
+        }
+    }
+
+    @keyframes closeMenu {
+        from {
+            opacity: 1;
+            height: 200px;
+        }
+        to {
+            opacity: 0;
+            height: 0;
+        }
+    }
+
+    .menu {
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        top: 54px;
+        left: 0;
+        @include column(center, space-evenly);
+        background-color: $offWhite;
+        animation-duration: .1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+
+        a {
+            position: relative;
+            font-size: $tabletSmallText;
+            font-family: $poppins;
+            padding: 0 1.5rem;
+            @include centerElements;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            width: 72.5vw;
+            height: 1px;
+            background-color: $black;
+        }
+
+        a:nth-last-child(1)::after {
+            height: 0;
+        }
+    }
+
+    .favorites {
+        button {
+            opacity: 1;
+            width: 30px;
+            height: 30px;
+            @include border($offWhite);
+
+            svg {
+                transform: translateX(-2%);
+                height: 12px;
+                color: $offWhite;
+            }
+        }
+    }
+}

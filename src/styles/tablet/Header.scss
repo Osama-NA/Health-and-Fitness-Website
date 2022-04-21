@@ -1,0 +1,37 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 0 3rem;
+        height: 75px;
+    }
+
+    .logo {
+        h1 {
+            font-size: 22px;
+            top: -1px;
+        }
+    }
+
+    .menu {
+        left: -47.5px;
+
+        a {
+            padding: 0 1rem;
+            font-size: $tabletSmallText;
+        }
+    }
+
+    .favorites {
+        button {
+            width: 35px;
+            height: 35px;
+
+            svg {
+                height: 14px;
+                transform: translateX(2%);
+            }
+        }
+    }
+}
