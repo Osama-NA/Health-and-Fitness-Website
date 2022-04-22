@@ -1,0 +1,25 @@
+@import '../../utils/partials/variables';
+@import '../../utils/partials/mixins';
+
+.home{
+    //top: -100px is used here to use full screen height, because header height is 100px and it's sticky
+    position: relative;
+    top: -100px;
+
+    width: 100%;
+    max-width: 1600px;
+    height: 100vh;
+    max-height: 800px;
+
+    @include row(flex-start, space-between);
+    overflow: hidden;
+}
+
+.plate-background{
+    position: relative;
+    top: 100px;
+
+    img{
+        width: 50vw;
+    }
+}

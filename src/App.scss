@@ -1,5 +1,5 @@
-@import './utils/variables';
-@import './utils/mixins';
+@import './utils/partials/variables';
+@import './utils/partials/mixins';
 
 *{
   margin: 0;
@@ -7,11 +7,13 @@
   box-sizing: border-box;
   letter-spacing: 1px;
 }
-
+body{
+  overflow-x: hidden;
+}
 .App{
   position: relative;
   width: 100vw;
   min-height: 100vh;
   background-color: $offWhite;
-  @include row(flex-start, center);
+  @include column(center, flex-start);
 }

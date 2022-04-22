@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
-const isMobile = () => document.body.offsetWidth < 769;
-
+// Only displayed if the user is on mobile size screen
 const MenuButton = ({isMenuOpened, setIsMenuOpened}) => {
-    return isMobile() && <Button isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+    return (
+        isMobile() && <Button isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+    )
 }
 
 const Button = ({ isMenuOpened, setIsMenuOpened }) => {
@@ -11,15 +12,21 @@ const Button = ({ isMenuOpened, setIsMenuOpened }) => {
     const [dashTwoStyle, setDashTwoStyle] = useState('none');
     const [dashThreeStyle, setDashThreeStyle] = useState('none');
 
-    useEffect(() => {
+    // Applies animation to the menu button on click event
+    const handleMenuButton = useCallback(() => {
         if (isMenuOpened) {
             setDashTwoStyle('fadeDownClose')
             setDashThreeStyle('fadeUpClose')
-        } else {
+        } else if (!isMenuOpened) {
             setDashTwoStyle('fadeUpOpen')
             setDashThreeStyle('fadeDownOpen')
         }
     }, [isMenuOpened]);
+
+    // Called on every click event on the menu button
+    useEffect(() => {
+        handleMenuButton();
+    }, [handleMenuButton, isMenuOpened]);
 
     return(
         <div className="menu-button" onClick={() => setIsMenuOpened(!isMenuOpened)}>
@@ -29,5 +36,7 @@ const Button = ({ isMenuOpened, setIsMenuOpened }) => {
         </div>
     )
 }
+
+const isMobile = () => document.body.offsetWidth < 769;
 
 export default MenuButton;

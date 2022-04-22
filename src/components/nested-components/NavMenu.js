@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Menu = ({ isMenuOpened }) => {
     const [menuAnimation, setMenuAnimation] = useState('none');
 
+    // Applies open / close animation to the menu when the menu button is clicked
     useEffect(() => {
         if (isMenuOpened) {
             setMenuAnimation('openMenu')

@@ -1,0 +1,26 @@
+@import '../../utils/partials/variables';
+@import '../../utils/partials/mixins';
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+
+.loading-screen{
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    @include centerElements;
+    background-color: $offWhite;
+    animation: fadeOut .1s linear .65s forwards;
+
+    h1{
+        font-family: $courgette;
+        color: $orange;
+        letter-spacing: 2px;
+    }
+}
