@@ -1,16 +1,34 @@
-import React, {useState} from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import MenuButton from './nested-components/MenuButton';
+import Menu from './nested-components/NavMenu';
 import '../styles/desktop/Header.scss';
 import '../styles/tablet/Header.scss';
 import '../styles/mobile/Header.scss';
-import MenuButton from './nested-components/MenuButton';
-import Menu from './nested-components/NavMenu';
 
-const Header = () => {
+const TRANSPARENT = "transparent";
+const FILLED_BACKGROUND = "#fbf8f3";
+
+const isMobile = () => document.body.offsetWidth < 769;
+
+const Header = ({scroll}) => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
+    const [backgroundColor, setBackgroundColor] = useState(TRANSPARENT);
+
+    const handleBackgroundColor = useCallback(() => {
+        if (isMobile()) return;
+
+        scroll > 0 ?
+            setBackgroundColor(FILLED_BACKGROUND) :
+            setBackgroundColor(TRANSPARENT);
+    },[scroll]);
+
+    useEffect(() => {
+        handleBackgroundColor();
+    }, [handleBackgroundColor, scroll]);
 
     return (
-        <header>
+        <header style={{backgroundColor: backgroundColor}}>
             <MenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
             <Logo />
             <Menu isMenuOpened={isMenuOpened} />

@@ -1,12 +1,12 @@
-@import '../../utils/partials/variables';
-@import '../../utils/partials/mixins';
+@import '../partials/variables';
+@import '../partials/mixins';
 
 header{
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 1600px;
+    max-width: 1300px;
     height: 100px;
     @include row(center, space-between);
     padding: 0 4rem;
@@ -43,7 +43,7 @@ header{
         padding: 0 1.5rem;
         font-size: $desktopSmallText;
         font-family: $poppins;
-        font-weight: 400;
+        font-weight: 600;
         transition: all .1s linear;
     }
     a:hover{
@@ -63,15 +63,15 @@ header{
         @include border;
         @include centerElements;
         
-        opacity: .85;
+        opacity: .875;
         width: 40px;
         height: 40px;
         border-radius: 50%;
+        transition: all .05s;
 
         svg{
             position: absolute;
             transform: translateY(-2%);
-            transform: translateX(6%);
             height: 16px;
             color: $orange;
         }

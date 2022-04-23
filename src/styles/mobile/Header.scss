@@ -1,5 +1,5 @@
-@import '../../utils/partials/variables';
-@import '../../utils/partials/mixins';
+@import '../partials/variables';
+@import '../partials/mixins';
 
 @media (max-width: 768px) {
     header {
@@ -163,7 +163,6 @@
             @include border($offWhite);
 
             svg {
-                transform: translateX(-2%);
                 height: 12px;
                 color: $offWhite;
             }

@@ -1,0 +1,109 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .plate-background {
+        position: relative;
+        right: 100px;
+        @include centerElements;
+
+        img {
+            position: relative;
+            width: 35vw;
+            min-width: 500px;
+            z-index: 2;
+        }
+
+        .blurred-color-bg-1 {
+            position: absolute;
+            width: 625px;
+            height: 400px;
+            left: -100px;
+            border-radius: 50%;
+            z-index: 1;
+            background: rgba(255, 64, 0, 0.35);
+            filter: blur(60px);
+            transform: rotate(130deg);
+        }
+
+        .blurred-color-bg-2 {
+            position: absolute;
+            width: 505px;
+            height: 200px;
+            bottom: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            background: rgba(13, 125, 78, 0.45);
+            filter: blur(60px);
+            transform: rotate(0deg);
+        }
+    }
+
+    .home-content {
+        padding-left: 6rem;
+        min-width: 600px;
+
+        h1 {
+            font-size: 46px;
+            font-family: $raleway;
+            font-weight: 900;
+            color: $black;
+
+            span {
+                color: $orange;
+            }
+        }
+
+        p {
+            color: $black;
+            font-family: $poppins;
+            font-size: $desktopSmallText;
+            margin-top: 1rem;
+            width: 36ch;
+        }
+
+        .home-buttons {
+            margin-top: 2.5rem;
+
+            a {
+                font-family: $poppins;
+                font-size: $desktopSmallText;
+                text-decoration: none;
+                padding: .75rem 1.75rem;
+                border-radius: 30px;
+                transition: all .15s;
+            }
+
+            .calories-btn {
+                opacity: .9;
+                color: $offWhite;
+                background-color: $orange;
+                margin-right: 1rem;
+            }
+
+            .calories-btn:hover {
+                opacity: 1;
+            }
+
+            .recipes-btn {
+                @include border($green);
+                color: $black;
+
+                svg {
+                    height: $desktopSmallText;
+                    padding-right: .5rem;
+                }
+
+                span {
+                    position: relative;
+                    top: -.75px;
+                }
+            }
+
+            .recipes-btn:hover {
+                color: $offWhite;
+                background-color: $green;
+            }
+        }
+    }
+}
