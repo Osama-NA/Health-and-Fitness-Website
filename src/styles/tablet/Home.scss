@@ -1,108 +1,70 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .plate-background {
-        position: relative;
-        right: 100px;
-        @include centerElements;
+@media (min-width: 700px) and (max-width: 1024px) {
+    .home{
+        top: -75px;
+    }
+
+    .home-image {
+        right: 60px;
 
         img {
-            position: relative;
-            width: 35vw;
-            min-width: 500px;
-            z-index: 2;
+            width: 50vw;
+            max-width: 500px;
+            min-width: 400px;
         }
 
+        .blurred-color-bg-1, .blurred-color-bg-2 {
+            filter: blur(40px);
+        }
+        
         .blurred-color-bg-1 {
-            position: absolute;
-            width: 625px;
-            height: 400px;
-            left: -100px;
-            border-radius: 50%;
-            z-index: 1;
-            background: rgba(255, 64, 0, 0.35);
-            filter: blur(60px);
-            transform: rotate(130deg);
+            width: 450px;
+            height: 250px;
+            background: rgba(255, 64, 0, 0.34);
         }
-
+        
         .blurred-color-bg-2 {
-            position: absolute;
-            width: 505px;
-            height: 200px;
-            bottom: 30px;
-            border-radius: 50%;
-            z-index: 1;
-            background: rgba(13, 125, 78, 0.45);
-            filter: blur(60px);
-            transform: rotate(0deg);
+            width: 400px;
+            height: 150px;
+            bottom: 0px;
+            background: rgba(13, 125, 78, 0.44);
         }
     }
 
     .home-content {
-        padding-left: 6rem;
-        min-width: 600px;
+        padding-left: 3rem;
+        min-width: 475px;
 
         h1 {
-            font-size: 46px;
-            font-family: $raleway;
-            font-weight: 900;
-            color: $black;
-
-            span {
-                color: $orange;
-            }
+            line-height: 52.5px;
+            font-size: 40px;
         }
 
         p {
-            color: $black;
-            font-family: $poppins;
-            font-size: $desktopSmallText;
-            margin-top: 1rem;
-            width: 36ch;
+            line-height: 30px;
+            font-size: $tabletSmallText;
+            margin-top: .75rem;
         }
 
         .home-buttons {
-            margin-top: 2.5rem;
+            margin-top: 2rem;
 
             a {
-                font-family: $poppins;
-                font-size: $desktopSmallText;
-                text-decoration: none;
-                padding: .75rem 1.75rem;
-                border-radius: 30px;
-                transition: all .15s;
+                font-size: $tabletSmallText;
+                padding: .6rem 1.5rem;
             }
 
             .calories-btn {
-                opacity: .9;
-                color: $offWhite;
-                background-color: $orange;
-                margin-right: 1rem;
-            }
-
-            .calories-btn:hover {
-                opacity: 1;
+                margin-right: .75rem;
             }
 
             .recipes-btn {
-                @include border($green);
-                color: $black;
-
+                padding: .475rem 1.75rem;
                 svg {
-                    height: $desktopSmallText;
-                    padding-right: .5rem;
+                    height: $tabletSmallText;
                 }
-
-                span {
-                    position: relative;
-                    top: -.75px;
-                }
-            }
-
-            .recipes-btn:hover {
-                color: $offWhite;
-                background-color: $green;
             }
         }
     }

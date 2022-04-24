@@ -126,7 +126,7 @@
         position: absolute;
         top: 54px;
         left: 0;
-        @include column(center, space-evenly);
+        @include flex(column, center, space-evenly);
         background-color: $offWhite;
         animation-duration: .1s;
         animation-timing-function: linear;

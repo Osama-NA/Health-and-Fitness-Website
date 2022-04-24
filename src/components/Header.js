@@ -13,7 +13,7 @@ const isMobile = () => document.body.offsetWidth < 769;
 
 const Header = ({scroll}) => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
-    const [backgroundColor, setBackgroundColor] = useState(TRANSPARENT);
+    const [backgroundColor, setBackgroundColor] = useState(null);
 
     const handleBackgroundColor = useCallback(() => {
         if (isMobile()) return;

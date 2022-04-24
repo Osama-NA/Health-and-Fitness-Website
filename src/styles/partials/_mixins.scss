@@ -5,16 +5,9 @@
     place-items: center;
 }
 
-@mixin row($alignItems: 'flex-start', $justifyContent: 'flex-start'){
+@mixin flex($direction: 'row', $alignItems: 'flex-start', $justifyContent: 'flex-start'){
     display: flex;
-    flex-direction: row;
-    align-items: $alignItems;
-    justify-content: $justifyContent;
-}
-
-@mixin column($alignItems: 'flex-start', $justifyContent: 'flex-start'){
-    display: flex;
-    flex-direction: column;
+    flex-direction: $direction;
     align-items: $alignItems;
     justify-content: $justifyContent;
 }

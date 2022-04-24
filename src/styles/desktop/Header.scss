@@ -8,7 +8,7 @@ header{
     width: 100%;
     max-width: 1300px;
     height: 100px;
-    @include row(center, space-between);
+    @include flex(row, center, space-between);
     padding: 0 4rem;
     z-index: 10;
 
@@ -35,7 +35,7 @@ header{
 }
 
 .menu{
-    @include row(center, center);
+    @include flex(row, center, center);
     position: relative;
     left: -47.5px;
 
@@ -43,7 +43,7 @@ header{
         padding: 0 1.5rem;
         font-size: $desktopSmallText;
         font-family: $poppins;
-        font-weight: 600;
+        font-weight: 500;
         transition: all .1s linear;
     }
     a:hover{
@@ -52,7 +52,7 @@ header{
 }
 
 .favorites{
-    @include row(center, flex-end);
+    @include flex(row, center, flex-end);
 
    button{
         cursor: pointer;

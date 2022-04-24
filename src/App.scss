@@ -16,5 +16,5 @@ body{
   width: 100vw;
   min-height: 100vh;
   background-color: $offWhite;
-  @include column(center, flex-start);
+  @include flex(column, center, flex-start);
 }

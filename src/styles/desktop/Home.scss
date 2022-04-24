@@ -1,7 +1,7 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-.home{
+.home {
     //top: -100px is used here to use full screen height, because header height is 100px and it's sticky
     position: relative;
     top: -100px;
@@ -11,16 +11,16 @@
     height: 100vh;
     max-height: 800px;
 
-    @include row(center, space-between);
+    @include flex(row, center, space-between);
     overflow: hidden;
 }
 
-.plate-background{
+.home-image {
     position: relative;
     right: 100px;
     @include centerElements;
 
-    img{
+    img {
         position: relative;
         top: 20px;
         width: 40vw;
@@ -29,59 +29,62 @@
         z-index: 2;
     }
 
-    .blurred-color-bg-1{
+    .blurred-color-bg-1,
+    .blurred-color-bg-2 {
         position: absolute;
-        width: 625px;
-        height: 400px;
-        left: -100px;
         border-radius: 50%;
+        filter: blur(40px);
         z-index: 1;
+    }
+
+    .blurred-color-bg-1 {
+        width: 600px;
+        height: 350px;
+        left: -80px;
         background: rgba(255, 64, 0, 0.35);
-        filter: blur(60px);
         transform: rotate(130deg);
     }
-    .blurred-color-bg-2{
-        position: absolute;
+
+    .blurred-color-bg-2 {
         width: 505px;
-        height: 200px;
-        bottom: 30px;
-        border-radius: 50%;
-        z-index: 1;
+        height: 150px;
+        bottom: 25px;
         background: rgba(13, 125, 78, 0.45);
-        filter: blur(60px);
         transform: rotate(0deg);
     }
 }
 
-.home-content{
+.home-content {
     position: relative;
-        z-index: 2;
+    z-index: 2;
     padding-left: 6rem;
     min-width: 600px;
 
-    h1{
+    h1 {
+        line-height: 60px;
         font-size: 46px;
         font-family: $raleway;
         font-weight: 900;
         color: $black;
 
-        span{
+        span {
             color: $orange;
         }
     }
 
-    p{
+    p {
         color: $black;
         font-family: $poppins;
         font-size: $desktopSmallText;
+        line-height: 35px;
         margin-top: 1rem;
         width: 36ch;
     }
 
-    .home-buttons{
+    .home-buttons {
         margin-top: 2.5rem;
 
-        a{
+        a {
             font-family: $poppins;
             font-size: $desktopSmallText;
             text-decoration: none;
@@ -89,29 +92,35 @@
             border-radius: 30px;
             transition: all .15s;
         }
-        .calories-btn{
+
+        .calories-btn {
             opacity: .9;
             color: $offWhite;
             background-color: $orange;
             margin-right: 1rem;
         }
+
         .calories-btn:hover {
             opacity: 1;
         }
-        .recipes-btn{
+
+        .recipes-btn {
+            padding: .625rem 1.75rem;
             @include border($green);
             color: $black;
 
-            svg{
+            svg {
                 height: $desktopSmallText;
                 padding-right: .5rem;
             }
-            span{
+
+            span {
                 position: relative;
                 top: -.75px;
             }
         }
-        .recipes-btn:hover{
+
+        .recipes-btn:hover {
             color: $offWhite;
             background-color: $green;
         }

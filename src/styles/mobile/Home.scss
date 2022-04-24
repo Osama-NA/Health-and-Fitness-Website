@@ -1,0 +1,82 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 700px) {
+    .home {
+        top: -55px;
+        max-width: 1300px;
+        @include flex(column-reverse, center, space-evenly);
+    }
+
+    .home-image {
+        right: unset;
+
+        img {
+            width: 75vw;
+            min-width: 0px;
+            max-width: 350px;
+        }
+
+        .blurred-color-bg-1,
+        .blurred-color-bg-2 {
+            filter: blur(50px);
+        }
+
+        .blurred-color-bg-1 {
+            width: 350px;
+            height: 150px;
+            left: -75px;
+            background: rgba(255, 64, 0, 0.35);
+        }
+
+        .blurred-color-bg-2 {
+            width: 300px;
+            height: 100px;
+            bottom: 0px;
+            background: rgba(13, 125, 78, 0.42);
+        }
+    }
+
+    .home-content {
+        width: 316px;
+        padding-left: 0;
+        min-width: 0px;
+
+        h1 {
+            line-height: 45px;
+            font-size: 34px;
+        }
+
+        p {
+            line-height: 25px;
+            font-size: $mobileSmallText;
+            margin-top: .75rem;
+            width: 36ch;
+        }
+
+        .home-buttons {
+            margin-top: 1.75rem;
+
+            a {
+                font-size: $mobileSmallText;
+                padding: .5rem 1.2rem;
+            }
+
+            .calories-btn {
+                margin-right: .5rem;
+            }
+
+            .recipes-btn {
+                padding: .375rem 1.2rem;
+
+                svg {
+                    height: $mobileSmallText;
+                    padding-right: .35rem;
+                }
+                span {
+                    top: -.25px;
+                }
+            }
+        }
+    }
+}
