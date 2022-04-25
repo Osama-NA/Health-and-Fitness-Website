@@ -11,10 +11,16 @@
 body{
   overflow-x: hidden;
 }
+
 .App{
   position: relative;
   width: 100vw;
   min-height: 100vh;
   background-color: $offWhite;
+  @include flex(column, center, flex-start);
+}
+
+.home{
+    width: 100%;
   @include flex(column, center, flex-start);
 }

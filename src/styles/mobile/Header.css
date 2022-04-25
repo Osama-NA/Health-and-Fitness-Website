@@ -1,0 +1,224 @@
+@media (max-width: 768px) {
+  header {
+    height: 55px;
+    padding: 0 1.5rem;
+    background-color: #FF7041;
+  }
+  @-webkit-keyframes fadeDownClose {
+    from {
+      opacity: 1;
+      top: 0px;
+    }
+    to {
+      opacity: 0;
+      top: 4px;
+    }
+  }
+  @keyframes fadeDownClose {
+    from {
+      opacity: 1;
+      top: 0px;
+    }
+    to {
+      opacity: 0;
+      top: 4px;
+    }
+  }
+  @-webkit-keyframes fadeUpClose {
+    from {
+      opacity: 1;
+      top: 8px;
+    }
+    to {
+      opacity: 0;
+      top: 4px;
+    }
+  }
+  @keyframes fadeUpClose {
+    from {
+      opacity: 1;
+      top: 8px;
+    }
+    to {
+      opacity: 0;
+      top: 4px;
+    }
+  }
+  @-webkit-keyframes fadeDownOpen {
+    from {
+      opacity: 0;
+      top: 4px;
+    }
+    to {
+      opacity: 1;
+      top: 8px;
+    }
+  }
+  @keyframes fadeDownOpen {
+    from {
+      opacity: 0;
+      top: 4px;
+    }
+    to {
+      opacity: 1;
+      top: 8px;
+    }
+  }
+  @-webkit-keyframes fadeUpOpen {
+    from {
+      opacity: 0;
+      top: 4px;
+    }
+    to {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+  @keyframes fadeUpOpen {
+    from {
+      opacity: 0;
+      top: 4px;
+    }
+    to {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+  .menu-button {
+    top: -1.25px;
+    display: block;
+    width: 25px;
+    height: 17px;
+  }
+  .menu-button .dash {
+    position: relative;
+    width: 100%;
+    height: 2.5px;
+    background-color: #fbf8f3;
+    border-radius: 5px;
+  }
+  .menu-button .dash-2,
+  .menu-button .dash-3 {
+    -webkit-animation-duration: .1s;
+            animation-duration: .1s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .menu-button .dash-2 {
+    top: 0px;
+  }
+  .menu-button .dash-1 {
+    top: 4px;
+  }
+  .menu-button .dash-3 {
+    top: 8px;
+  }
+  .logo h1 {
+    color: #fbf8f3;
+    top: 0;
+    font-size: 22px;
+    left: 2px;
+  }
+  @-webkit-keyframes openMenu {
+    from {
+      opacity: 0;
+      height: 0;
+    }
+    to {
+      opacity: 1;
+      height: 200px;
+    }
+  }
+  @keyframes openMenu {
+    from {
+      opacity: 0;
+      height: 0;
+    }
+    to {
+      opacity: 1;
+      height: 200px;
+    }
+  }
+  @-webkit-keyframes closeMenu {
+    from {
+      opacity: 1;
+      height: 200px;
+    }
+    to {
+      opacity: 0;
+      height: 0;
+    }
+  }
+  @keyframes closeMenu {
+    from {
+      opacity: 1;
+      height: 200px;
+    }
+    to {
+      opacity: 0;
+      height: 0;
+    }
+  }
+  .menu {
+    opacity: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 54px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: #fbf8f3;
+    -webkit-animation-duration: .1s;
+            animation-duration: .1s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    overflow: hidden;
+  }
+  .menu a {
+    position: relative;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    padding: 0 1.5rem;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .menu a::after {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    width: 72.5vw;
+    height: 1px;
+    background-color: #1D220D;
+  }
+  .menu a:nth-last-child(1)::after {
+    height: 0;
+  }
+  .favorites button {
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fbf8f3;
+  }
+  .favorites button svg {
+    height: 12px;
+    color: #fbf8f3;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

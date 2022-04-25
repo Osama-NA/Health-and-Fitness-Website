@@ -1,0 +1,120 @@
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 4rem;
+  z-index: 10;
+}
+
+header a {
+  text-decoration: none;
+  color: #1D220D;
+}
+
+.menu-button {
+  display: none;
+}
+
+.logo h1 {
+  color: #FF7041;
+  position: relative;
+  top: -2px;
+  font-family: "Courgette", cursive;
+  font-size: 26px;
+  font-weight: light;
+  letter-spacing: 2px;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  left: -47.5px;
+}
+
+.menu a {
+  padding: 0 1.5rem;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.menu a:hover {
+  color: #FF7041;
+}
+
+.favorites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.favorites button {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #FF7041;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  opacity: .875;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-transition: all .05s;
+  transition: all .05s;
+}
+
+.favorites button svg {
+  position: absolute;
+  -webkit-transform: translateY(-2%);
+          transform: translateY(-2%);
+  height: 16px;
+  color: #FF7041;
+}
+
+.favorites button:hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=Header.css.map */

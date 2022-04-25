@@ -1,0 +1,27 @@
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 0 2.5rem;
+    height: 75px;
+  }
+  .logo h1 {
+    font-size: 22px;
+    top: -1px;
+  }
+  .menu {
+    left: -47.5px;
+  }
+  .menu a {
+    padding: 0 1rem;
+    font-size: 16px;
+  }
+  .favorites button {
+    width: 35px;
+    height: 35px;
+  }
+  .favorites button svg {
+    height: 14px;
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+}
+/*# sourceMappingURL=Header.css.map */

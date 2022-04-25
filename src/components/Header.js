@@ -6,21 +6,28 @@ import '../styles/desktop/Header.scss';
 import '../styles/tablet/Header.scss';
 import '../styles/mobile/Header.scss';
 
-const TRANSPARENT = "transparent";
-const FILLED_BACKGROUND = "#fbf8f3";
+const TRANSPARENT = {
+    backgroundColor: "transparent",
+    boxShadow: "none"
+}
+
+const FILLED_BACKGROUND = {
+    backgroundColor: "#fbf8f3",
+    boxShadow: "-10px 10px 30px rgba(119, 119, 119, 0.1)"
+}
 
 const isMobile = () => document.body.offsetWidth < 769;
 
 const Header = ({scroll}) => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
-    const [backgroundColor, setBackgroundColor] = useState(null);
+    const [headerStyle, setHeaderStyle] = useState(null);
 
     const handleBackgroundColor = useCallback(() => {
         if (isMobile()) return;
 
         scroll > 0 ?
-            setBackgroundColor(FILLED_BACKGROUND) :
-            setBackgroundColor(TRANSPARENT);
+            setHeaderStyle(FILLED_BACKGROUND) :
+            setHeaderStyle(TRANSPARENT);
     },[scroll]);
 
     useEffect(() => {
@@ -28,7 +35,7 @@ const Header = ({scroll}) => {
     }, [handleBackgroundColor, scroll]);
 
     return (
-        <header style={{backgroundColor: backgroundColor}}>
+        <header style={headerStyle}>
             <MenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
             <Logo />
             <Menu isMenuOpened={isMenuOpened} />

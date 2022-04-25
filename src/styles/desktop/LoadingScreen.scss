@@ -16,7 +16,7 @@
     height: 100vh;
     @include centerElements;
     background-color: $offWhite;
-    animation: fadeOut .1s linear .65s forwards;
+    animation: fadeOut .2s linear 1.3s forwards;
 
     h1{
         font-family: $courgette;

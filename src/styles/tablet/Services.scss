@@ -1,0 +1,40 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-section {
+        top: -75px;
+        max-height: 800px;
+    }
+
+    .service {
+        width: 44%;
+        border-radius: 45px;
+        padding: 2.5rem 1.35rem;
+        @include flex(column, center, flex-start);
+
+        img,
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            height: 125px;
+        }
+
+        p {
+            line-height: 30px;
+            font-size: $tabletSmallText;
+        }
+
+        a {
+            font-size: $tabletSmallText;
+            padding: .6rem 1.5rem;
+
+            svg {
+                height: $tabletSmallText;
+                padding-left: 1rem;
+            }
+        }
+    }
+}

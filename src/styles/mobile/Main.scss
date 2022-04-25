@@ -1,10 +1,9 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-@media (max-width: 700px) {
-    .home {
+@media (max-width: 599px) {
+    .main-section {
         top: -55px;
-        max-width: 1300px;
         @include flex(column-reverse, center, space-evenly);
     }
 
@@ -23,17 +22,15 @@
         }
 
         .blurred-color-bg-1 {
-            width: 350px;
+            width: 300px;
             height: 150px;
-            left: -75px;
-            background: rgba(255, 64, 0, 0.35);
+            left: -65px;
         }
 
         .blurred-color-bg-2 {
-            width: 300px;
-            height: 100px;
+            width: 280px;
+            height: 80px;
             bottom: 0px;
-            background: rgba(13, 125, 78, 0.42);
         }
     }
 
@@ -44,7 +41,7 @@
 
         h1 {
             line-height: 45px;
-            font-size: 34px;
+            font-size: 38px;
         }
 
         p {

@@ -7,7 +7,7 @@ const LoadingScreen = () => {
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setShowLoadingScreen(false), 750);
+    setTimeout(() => setShowLoadingScreen(false), 1500);
   }, []);
 
   return showLoadingScreen && <Screen />

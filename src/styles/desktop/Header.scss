@@ -6,7 +6,6 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 1300px;
     height: 100px;
     @include flex(row, center, space-between);
     padding: 0 4rem;

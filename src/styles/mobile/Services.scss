@@ -1,0 +1,53 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {
+    .services-section {
+        top: -55px;
+        height: auto;
+        max-height: 100%;
+        background-position: center 0;
+    }
+
+    .services-container {
+        padding: 1.75rem;
+        min-height: 800px;
+        @include flex(column, center, space-evenly);
+    }
+
+    .service {
+        width: auto;
+        max-width: 320px;
+        border-radius: 30px;
+        padding: 1.5rem 1.5rem 1.75rem;
+        margin-bottom: 1.75rem;
+        @include flex(column, center, flex-start);
+
+        img,
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        img {
+            height: 100px;
+        }
+
+        p {
+            font-size: $mobileSmallText;
+            line-height: 25px;
+        }
+
+        a {
+            font-size: $mobileSmallText;
+            padding: .5rem 1.2rem;
+
+            svg {
+                height: $mobileSmallText;
+                padding-left: .75rem;
+            }
+        }
+    }
+    .service:nth-child(2){
+        margin-bottom: 0;
+    }
+}

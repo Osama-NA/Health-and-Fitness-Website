@@ -1,13 +1,13 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-.home {
+.main-section {
     //top: -100px is used here to use full screen height, because header height is 100px and it's sticky
     position: relative;
     top: -100px;
 
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px;
     height: 100vh;
     max-height: 800px;
 
@@ -39,17 +39,18 @@
 
     .blurred-color-bg-1 {
         width: 600px;
-        height: 350px;
-        left: -80px;
-        background: rgba(255, 64, 0, 0.35);
+        height: 300px;
+        left: -65px;
+        background: rgba(255, 64, 0, 0.30);
         transform: rotate(130deg);
     }
 
     .blurred-color-bg-2 {
-        width: 505px;
-        height: 150px;
-        bottom: 25px;
-        background: rgba(13, 125, 78, 0.45);
+        width: 400px;
+        height: 75px;
+        bottom: 15px;
+        left: 150px;
+        background: rgba(13, 125, 78, 0.40);
         transform: rotate(0deg);
     }
 }
@@ -61,11 +62,12 @@
     min-width: 600px;
 
     h1 {
-        line-height: 60px;
-        font-size: 46px;
+        line-height: 58px;
+        font-size: 48px;
         font-family: $raleway;
         font-weight: 900;
         color: $black;
+        letter-spacing: 0;
 
         span {
             color: $orange;
@@ -111,6 +113,7 @@
 
             svg {
                 height: $desktopSmallText;
+                max-height: 30px;
                 padding-right: .5rem;
             }
 

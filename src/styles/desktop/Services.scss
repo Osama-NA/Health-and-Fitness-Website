@@ -1,0 +1,79 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.services-section {
+    position: relative;
+    top: -100px;
+    width: 100%;
+    height: 100vh;
+    max-height: 850px;
+    overflow: hidden;
+    background-image: url('../../utils/images/services-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    @include centerElements;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff71417d;
+    z-index: 1;
+}
+
+.services-container {
+    width: 100%;
+    @include flex(row, center, space-evenly);
+    z-index: 2;
+}
+
+.service {
+    width: 40%;
+    max-width: 500px;
+    background-color: $offWhite;
+    border-radius: 45px;
+    padding: 3rem 1.5rem;
+    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.15);
+    @include flex(column, center, flex-start);
+
+    img,
+    p {
+        margin-bottom: 2rem;
+    }
+
+    img {
+        height: 175px;
+    }
+
+    p {
+        text-align: center;
+        color: $black;
+        font-family: $poppins;
+        font-size: $desktopSmallText;
+        line-height: 35px;
+        max-width: 39ch;
+    }
+
+    a {
+        font-family: $poppins;
+        font-size: $desktopSmallText;
+        text-decoration: none;
+        padding: .75rem 1.75rem;
+        border-radius: 30px;
+        opacity: .9;
+        color: $offWhite;
+        background-color: $orange;
+        box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.1);
+        transition: all .15s;
+
+        svg {
+            height: $desktopSmallText;
+            max-height: 30px;
+            padding-left: 1.25rem;
+        }
+    }
+    a:hover{
+        opacity: 1;
+    }
+}

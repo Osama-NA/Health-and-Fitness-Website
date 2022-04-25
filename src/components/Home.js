@@ -1,16 +1,42 @@
 import React from 'react';
-import '../styles/desktop/Home.scss';
-import '../styles/tablet/Home.scss';
-import '../styles/mobile/Home.scss';
-import HomeContent from './nested-components/HomeContent';
+import HomeInfo from './nested-components/HomeInfo';
 import HomeImage from './nested-components/HomeImageContainer';
+import ServicesContainer from './nested-components/ServicesContainer';
+
+// MAIN SECTION STYLES
+import '../styles/desktop/Main.scss';
+import '../styles/tablet/Main.scss';
+import '../styles/mobile/Main.scss';
+
+// SERVICES SECTION STYLES
+import '../styles/desktop/Services.scss';
+import '../styles/tablet/Services.scss';
+import '../styles/mobile/Services.scss';
 
 const Home = () => { 
     return (
         <main className="home">
-            <HomeContent />
-            <HomeImage />
+            <Main />
+            <Services />
         </main>
+    )
+}
+
+const Main = () => {
+    return (
+        <section className="main-section">
+            <HomeInfo />
+            <HomeImage />
+        </section>
+    )
+}
+
+const Services = () => {
+    return (
+        <section className="services-section">
+            <ServicesContainer />
+            <div className="overlay"></div>
+        </section>
     )
 }
 
