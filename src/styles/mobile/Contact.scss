@@ -1,0 +1,92 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin-top: -55px;
+        height: auto;
+        padding: 4rem 1.75rem;
+    
+        @include flex(column, center, flex-start);
+    }
+    
+    .contact-form-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 0 4rem 0;
+        @include flex(column, center);
+    
+        h2 {
+            font-size: $mobileHeading;
+            margin-bottom: 2.5rem;
+        }
+    
+        .input-group {
+            margin: 1rem 0;
+        }
+    
+        .input-field {
+            label {
+                top: -2.5px;
+                left: 1.1rem;
+                padding: .2rem;
+                font-size: 10px;
+            }
+            .message-label {
+                padding: .8rem .2rem;
+                left: 1rem;
+            }
+            input,
+            textarea {
+                font-size: $mobileSmallText;
+                padding: .5rem 1.2rem;
+            }
+            input::placeholder,
+            textarea::placeholder {
+                font-size: $mobileSmallText;
+            }
+            textarea {
+                padding: 1.45rem 1.2rem .5rem;
+            }
+        }
+    
+        button {
+            font-size: $mobileSmallText;
+            padding: .5rem 1.2rem;
+            margin-top: 1rem;
+    
+            span {
+                margin-right: .75rem;
+            }
+            svg {
+                font-size: $mobileSmallText;
+            }
+        }
+    }
+    
+    .recommendations {
+        width: 100%;
+        max-width: 500px;
+        @include flex(column);
+    }
+    
+    .recommendation {
+        width: 100%;
+        height: 125px;
+        margin: .5rem 0;
+        border-radius: 15px;
+        
+        h3 {
+            font-size: 24px;
+            padding: 1.5rem;
+        }
+        .overlay{
+            opacity: .65;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(145deg, $green, $orange);
+            border-radius: 15px;
+        }
+    }
+}

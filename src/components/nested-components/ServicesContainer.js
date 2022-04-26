@@ -1,8 +1,10 @@
-import Service from './Service';
 import RecipesServiceImage from '../../utils/images/services-recipes-img.png';
 import CaloriesServiceImage from '../../utils/images/services-calories-img.png';
+import { Link } from 'react-router-dom';
 
-const Services = ({ img, description, path, text, buttonIcon }) => {
+const SERVICE_ALT = "FoodFinder Services";
+
+const Services = () => {
     return (
         <div className="services-container">
             <Service
@@ -22,5 +24,21 @@ const Services = ({ img, description, path, text, buttonIcon }) => {
         </div>
     )
 }
+
+const Service = ({ img, description, path, text, buttonIcon }) => {
+    return (
+        <article className="service">
+            <img src={img} alt={SERVICE_ALT} draggable={false} />
+
+            <p>{description}</p>
+
+            <Link to={path}>
+                <span>{text}</span>
+                <svg className={buttonIcon}></svg>
+            </Link>
+        </article>
+    )
+}
+
 
 export default Services;

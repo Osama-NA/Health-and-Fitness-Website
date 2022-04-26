@@ -59,6 +59,7 @@ header{
         outline: none;
         border: none;
         background-color: transparent;
+        @include dropDownShadow;
         @include border;
         @include centerElements;
         

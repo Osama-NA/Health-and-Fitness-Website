@@ -12,6 +12,14 @@
     justify-content: $justifyContent;
 }
 
-@mixin border($color: $orange){
-    border: 2px solid $color;
+@mixin border($color: $orange, $width: 2px){
+    border: $width solid $color;
+}
+
+@mixin dropDownShadow{
+    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.15);
+}
+
+@mixin dropDownShadowHover{
+    box-shadow: -5px 8px 25px rgba(39, 39, 39, 0.25);
 }

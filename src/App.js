@@ -5,20 +5,20 @@ import Header from './components/Header';
 import LoadingScreen from './components/LoadingScreen';
 import { useState, useEffect } from 'react';
 
-// BrowserRouter allows routing between children elements
+
 const App = () => {
 
   const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      setScroll(window.scrollY)
+      setScroll(window.scrollY);
     })
-  })
+  }, [])
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter> {/* BrowserRouter allows routing between children elements */}
         <LoadingScreen />
         <Header scroll={scroll} />
         <Pages />

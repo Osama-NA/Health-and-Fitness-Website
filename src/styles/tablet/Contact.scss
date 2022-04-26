@@ -1,0 +1,79 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-section {
+        position: relative;
+        margin-top: -75px;
+        max-height: 600px;
+    }
+
+    .contact-form-container {
+        margin: 0 1rem 0 2rem;
+        width: 350px;
+
+        h2 {
+            font-size: $tabletHeading;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            width: 100%;
+            margin: 1.25rem 0;
+        }
+
+        .input-field {
+            label {
+                top: -3px;
+                left: 1.25rem;
+                padding: .2rem;
+                font-size: 12px;
+            }
+            .message-label {
+                padding: 1rem .25rem;
+                left: 1.05rem;
+            }
+            input,
+            textarea {
+                font-size: $tabletSmallText;
+                padding: .45rem 1.25rem .5rem 1.25rem;
+            }
+            input::placeholder,
+            textarea::placeholder {
+                font-size: $tabletSmallText;
+            }
+            textarea {
+                padding: 1.39rem 1.25rem .75rem;
+            }
+        }
+
+        button {
+            font-size: $tabletSmallText;
+            padding: .6rem 1.5rem;
+            margin-top: 1rem;
+
+            span {
+                margin-right: .75rem;
+            }
+            svg {
+                font-size: $tabletSmallText;
+            }
+        }
+    }
+
+    .recommendations {
+        max-width: 393px;
+        margin: 0 1rem 0 0;
+    }
+
+    .recommendation {
+        width: 180px;
+        height: 180px;
+        margin: .5rem;
+
+        h3 {
+            font-size: 20px;
+            padding: .75rem;
+        }
+    }
+}

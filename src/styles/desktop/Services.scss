@@ -5,21 +5,20 @@
     position: relative;
     top: -100px;
     width: 100%;
-    height: 100vh;
-    max-height: 850px;
+    height: 750px;
     overflow: hidden;
     background-image: url('../../utils/images/services-background.jpg');
     background-size: cover;
     background-attachment: fixed;
     @include centerElements;
-}
 
-.overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #ff71417d;
-    z-index: 1;
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ff71417d;
+        z-index: 1;
+    }
 }
 
 .services-container {
@@ -32,9 +31,9 @@
     width: 40%;
     max-width: 500px;
     background-color: $offWhite;
-    border-radius: 45px;
-    padding: 3rem 1.5rem;
-    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.15);
+    border-radius: 40px;
+    padding: 2rem 1.5rem;
+    @include dropDownShadow;
     @include flex(column, center, flex-start);
 
     img,
@@ -56,6 +55,8 @@
     }
 
     a {
+        width: 97%;
+        text-align: center;
         font-family: $poppins;
         font-size: $desktopSmallText;
         text-decoration: none;
@@ -64,7 +65,7 @@
         opacity: .9;
         color: $offWhite;
         background-color: $orange;
-        box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.1);
+        @include dropDownShadow;
         transition: all .15s;
 
         svg {

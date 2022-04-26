@@ -1,0 +1,162 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.contact-section{
+    position: relative;
+    margin-top: -100px;
+    width: 100%;
+    height: 750px;
+
+    @include flex(row, center, space-evenly);
+}
+
+.contact-form-container{
+    margin: 0 1rem 0 3rem;
+    width: 500px;
+    @include flex(column, center);
+
+    h2{
+        color: $black;
+        font-size: $desktopHeading;
+        font-family: $raleway;
+        margin-bottom: 3rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+
+        span{
+            color: $orange;
+        }
+    }
+
+    .input-group{
+        width: 100%;
+        margin: 1.5rem 0;
+        @include flex(row, center, space-between);
+
+        .input-field{
+            width: 48%;
+        }
+    }
+    .input-field{
+        position: relative;
+        width: 100%;
+
+        label, input, textarea{
+            font-family: poppins;
+        }
+        label{
+            position: absolute;
+            top: -4px;
+            left: 1.5rem;
+            line-height: 0;
+            color: $orange;
+            background-color: $offWhite;
+            padding:.25rem;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .message-label{
+            width: 100%;
+            padding: 1rem .25rem;
+            left: 1.3rem;
+        }
+        input, textarea{
+            width: 100%;
+            @include border($black);
+            outline: none;
+            font-size: $desktopSmallText;
+            border-radius: 30px;
+            padding: .75rem 1.5rem;
+            background-color: $offWhite;
+        }
+        input::placeholder, textarea::placeholder{
+            color: rgb(155, 155, 155);
+            font-family: poppins;
+            font-size: $desktopSmallText;
+        }
+        textarea{
+            padding: 1.3rem 1.5rem .75rem;
+            border-width: 0 0 2px 0;
+            border-radius: 0;
+            resize: none;
+        }
+        textarea::-webkit-scrollbar {
+            width: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: $orange;
+        }
+    }
+    button{
+        cursor: pointer;
+        width: 100%;
+        opacity: .9;
+        border: none;
+        outline: none;
+        font-family: $poppins;
+        font-size: $desktopSmallText;
+        padding: .75rem 1.75rem;
+        border-radius: 30px;
+        @include dropDownShadow;
+        color: $offWhite;
+        background-color: $orange;
+        transition: all .2s;
+        margin-top: 1.5rem;
+
+        span{
+            margin-right: .75rem;
+        }
+        svg{
+            font-size: 16px;
+        }
+    }
+    button:hover{
+        opacity: 1;
+    }
+}
+
+.recommendations{
+    max-width: 525px;
+    @include flex(rows);
+    flex-wrap: wrap;
+    margin: 0 1rem;
+}
+
+.recommendation{
+    position: relative;
+    text-decoration: none;
+    width: 230px;
+    height: 230.5px;
+    margin: 1rem;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include centerElements;
+    @include dropDownShadow;
+    transition: all .15s ease;
+
+    h3{
+        position: relative;
+        color: $offWhite;
+        text-align: center;
+        font-family: $raleway;
+        font-size: 26px;
+        font-weight: 800;
+        padding: 1rem;
+        text-shadow: -1px 1px 15px rgba(63, 63, 63, 0.519);
+        z-index: 2;
+    }
+    .overlay{
+        opacity: .65;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(145deg, $green, $orange);
+        border-radius: 30px;
+    }
+}
+.recommendation:hover{
+    transform: scale(1.02);
+    @include dropDownShadowHover;
+}

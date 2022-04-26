@@ -6,11 +6,7 @@ const Menu = ({ isMenuOpened }) => {
 
     // Applies open / close animation to the menu when the menu button is clicked
     useEffect(() => {
-        if (isMenuOpened) {
-            setMenuAnimation('openMenu')
-        } else {
-            setMenuAnimation('closeMenu')
-        }
+        isMenuOpened ? setMenuAnimation('openMenu') : setMenuAnimation('closeMenu')
     }, [isMenuOpened]);
 
     return (
