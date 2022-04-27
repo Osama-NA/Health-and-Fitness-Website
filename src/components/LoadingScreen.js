@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../styles/desktop/LoadingScreen.scss';
 
 // Loads when the app loads to hide the elements initial load
-// fades out after 750ms, then the screen is removed from DOM
+// fades out after 1500ms, then the screen is removed from DOM
 const LoadingScreen = () => {
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 

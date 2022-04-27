@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Pages from './components/Pages';
 import Header from './components/Header';
 import LoadingScreen from './components/LoadingScreen';
+import { ScrollProvider } from './context/Scroll'
 import { useState, useEffect } from 'react';
 
 
@@ -19,9 +20,11 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter> {/* BrowserRouter allows routing between children elements */}
-        <LoadingScreen />
-        <Header scroll={scroll} />
-        <Pages />
+        <ScrollProvider>
+          <LoadingScreen />
+          <Header scroll={scroll} />
+          <Pages />
+        </ScrollProvider>
       </BrowserRouter>
     </div>
   );

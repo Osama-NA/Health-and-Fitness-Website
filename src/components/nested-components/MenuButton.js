@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-// Only displayed if the user is on mobile size screen
+// Menu button is only displayed if the user is on mobile size screen
 const MenuButton = ({isMenuOpened, setIsMenuOpened}) => {
     return (
         isMobile() && <Button isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
@@ -9,17 +9,19 @@ const MenuButton = ({isMenuOpened, setIsMenuOpened}) => {
 
 const Button = ({ isMenuOpened, setIsMenuOpened }) => {
 
-    const [dashTwoStyle, setDashTwoStyle] = useState('none');
-    const [dashThreeStyle, setDashThreeStyle] = useState('none');
+    // initial state should be 'none' since the menu is closed initially
+    // to avoid applying opened menu menu button animation initially
+    const [dashTwoAnimation, setDashTwoAnimation] = useState('none');
+    const [dashThreeAnimation, setDashThreeAnimation] = useState('none');
 
     // Applies animation to the menu button on click event
     const handleMenuButton = useCallback(() => {
         if (isMenuOpened) {
-            setDashTwoStyle('fadeDownClose')
-            setDashThreeStyle('fadeUpClose')
+            setDashTwoAnimation('fadeDownClose')
+            setDashThreeAnimation('fadeUpClose')
         } else if (!isMenuOpened) {
-            setDashTwoStyle('fadeUpOpen')
-            setDashThreeStyle('fadeDownOpen')
+            setDashTwoAnimation('fadeUpOpen')
+            setDashThreeAnimation('fadeDownOpen')
         }
     }, [isMenuOpened]);
 
@@ -30,9 +32,9 @@ const Button = ({ isMenuOpened, setIsMenuOpened }) => {
 
     return(
         <div className="menu-button" onClick={() => setIsMenuOpened(!isMenuOpened)}>
-            <div className="dash-2 dash" style={{ animationName: dashTwoStyle }}></div>
+            <div className="dash-2 dash" style={{ animationName: dashTwoAnimation }}></div>
             <div className="dash-1 dash"></div>
-            <div className="dash-3 dash" style={{ animationName: dashThreeStyle}}></div>
+            <div className="dash-3 dash" style={{ animationName: dashThreeAnimation}}></div>
         </div>
     )
 }

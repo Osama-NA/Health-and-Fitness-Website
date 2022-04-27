@@ -4,7 +4,6 @@ import RecommendedLinkImage2 from '../../utils/images/recommended2.jpg';
 import RecommendedLinkImage3 from '../../utils/images/recommended3.jpg';
 import RecommendedLinkImage4 from '../../utils/images/recommended4.jpg';
 
-
 const recommendations = [
     {
         imageSource: RecommendedLinkImage1,

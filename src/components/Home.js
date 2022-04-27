@@ -49,10 +49,12 @@ const Services = () => {
 
 const Contact = () => {
     return(
-        <section className="contact-section">
-            <ContactForm />
-            <RecommendedLinks />
-        </section>
+        <>
+            <section className="contact-section">
+                <ContactForm />
+                <RecommendedLinks />
+            </section>
+        </>
     )
 }
 

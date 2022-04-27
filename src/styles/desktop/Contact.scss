@@ -15,6 +15,11 @@
     width: 500px;
     @include flex(column, center);
 
+    .contact-ref{
+        position: absolute;
+        top: -20px;
+    }
+
     h2{
         color: $black;
         font-size: $desktopHeading;
