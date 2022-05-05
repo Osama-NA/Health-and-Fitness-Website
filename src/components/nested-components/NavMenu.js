@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { TO_SEARCH_PARAM } from '../../utils/globalConstants';
+import { useLocation } from 'react-router-dom';
 import { ScrollContext } from '../../context/Scroll'
+import MenuItems from './MenuItems'
 
 const Menu = ({ isMenuOpened }) => {
     const location = useLocation();
@@ -33,9 +33,7 @@ const Menu = ({ isMenuOpened }) => {
 
     return (
         <nav className="menu" style={{ animationName: menuAnimation }} onClick={handleClick}>
-            <Link to="Recipes">Recipes</Link>
-            <Link to="Calories">Calories</Link>
-            <Link to={`/?${TO_SEARCH_PARAM}=Contact`}>Contact</Link>
+            <MenuItems />
         </nav>
     )
 }

@@ -7,22 +7,22 @@ import RecommendedLinkImage4 from '../../utils/images/recommended4.jpg';
 const recommendations = [
     {
         imageSource: RecommendedLinkImage1,
-        title: 'Top 10 healthy recipes',
+        title: 'Our Top 10 Healthiest Foods',
         link: ''
     },
     {
         imageSource: RecommendedLinkImage2,
-        title: 'Calories in common foods',
+        title: 'Calories in Common Foods',
         link: ''
     },
     {
         imageSource: RecommendedLinkImage3,
-        title: 'Calories meal planning samples',
+        title: 'Calories Meal Planning Samples',
         link: ''
     },
     {
         imageSource: RecommendedLinkImage4,
-        title: 'Top calorie dense foods to gain weight',
+        title: 'Most Calorie Dense Foods to Gain Weight',
         link: ''
     }
 ]

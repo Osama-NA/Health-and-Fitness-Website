@@ -1,0 +1,33 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+footer{
+    width: 100vw;
+    color: $offWhite;
+    background-color: $black;
+    @include flex(column, center);
+    padding: 4rem;
+
+    .logo h1 {
+        color: $orange;
+        font-family: $courgette;
+        font-size: 26px;
+        font-weight: light;
+        letter-spacing: 2px;
+    }
+    a, button{
+        color: $offWhite;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 1rem;
+        font-size: 16px;
+        font-family: $poppins;
+        font-weight: 300;
+        transition: all .1s linear;
+    }
+    a:hover, button:hover {
+        color: $orange;
+    }
+}

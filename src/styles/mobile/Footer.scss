@@ -1,0 +1,17 @@
+@import '../partials/variables';
+
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem;
+
+        .logo h1 {
+            color: $orange;
+            font-size: 22px;
+        }
+        a,
+        button {
+            padding: .75rem;
+            font-size: 12px;
+        }
+    }
+}

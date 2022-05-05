@@ -1,6 +1,7 @@
 import { useEffect, useCallback, useState } from 'react';
 import MenuButton from './nested-components/MenuButton';
 import Menu from './nested-components/NavMenu';
+import Logo from './nested-components/Logo'
 import '../styles/desktop/Header.scss';
 import '../styles/tablet/Header.scss';
 import '../styles/mobile/Header.scss';
@@ -14,8 +15,6 @@ const FILLED_BACKGROUND = {
     backgroundColor: "#fbf8f3",
     boxShadow: "-10px 10px 30px rgba(119, 119, 119, 0.1)"
 }
-
-const HOME_PAGE = window.location.origin;
 
 const isMobile = () => document.body.offsetWidth < 769;
 
@@ -46,14 +45,6 @@ const Header = ({scroll}) => {
             <Favorites />
         </header>
   )
-}
-
-const Logo = () => {
-    return(
-        <a href={HOME_PAGE} className="logo">
-            <h1>FoodFinder</h1>
-        </a>
-    )
 }
 
 const Favorites = () => {

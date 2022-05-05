@@ -15,22 +15,22 @@ header{
         text-decoration: none;
         color: $black;
     }
+
+    .logo{
+        h1{
+            color: $orange;
+            position: relative;
+            top: -2px;
+            font-family: $courgette;
+            font-size: 26px;
+            font-weight: light;
+            letter-spacing: 2px;
+        }
+    }
 }
 
 .menu-button{
     display: none;
-}
-
-.logo{
-    h1{
-        color: $orange;
-        position: relative;
-        top: -2px;
-        font-family: $courgette;
-        font-size: 26px;
-        font-weight: light;
-        letter-spacing: 2px;
-    }
 }
 
 .menu{
