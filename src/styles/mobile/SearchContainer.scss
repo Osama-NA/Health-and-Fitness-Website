@@ -1,0 +1,49 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {
+    .search-container {
+        height: 250px;
+
+        h1 {
+            width: 22ch;
+            font-size: 24px;
+        }
+
+        .search {
+            width: 90%;
+
+            input,
+            .search-button {
+                padding: .6rem 1.25rem;
+                font-size: $mobileSmallText;
+            }
+        }
+    }
+    
+    .healthy-foods {
+        padding: 2rem 1rem;
+    
+        h2 {
+            font-size: $mobileHeading;
+            margin-bottom: 1.5rem;
+        }
+    
+        .food-items {
+        @include flex(row, stretch, center);
+            .food-item {
+                width: 125px;
+                height: 45px;
+                margin: .5rem;
+                border-radius: 10px;
+    
+                p {
+                    font-size: 14px;
+                }
+                .overlay{
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

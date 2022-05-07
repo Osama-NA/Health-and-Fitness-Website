@@ -6,6 +6,13 @@
         height: 55px;
         padding: 0 1.5rem;
         background-color: $orange;
+
+        .logo h1 {
+            color: $offWhite;
+            top: 0;
+            font-size: 22px;
+            left: 2px;
+        }
     }
 
     @keyframes fadeDownClose {
@@ -88,13 +95,6 @@
         .dash-3 {
             top: 8px;
         }
-    }
-
-    .logo h1 {
-        color: $offWhite;
-        top: 0;
-        font-size: 22px;
-        left: 2px;
     }
 
     @keyframes openMenu {

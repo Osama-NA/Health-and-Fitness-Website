@@ -1,0 +1,32 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {
+    .recipes-title {
+        font-size: $mobileHeading;
+        margin-bottom: 1.5rem;
+    }
+
+    .recipes-container {
+        padding: 0 1rem 2rem;
+    }
+
+    .recipe {
+        min-width: 125px;
+        width: 125px;
+        height: 110px;
+        margin: .5rem;
+        border-radius: 15px;
+    }
+
+    .recipe-image {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .recipe-title {
+        p {
+            padding: .35rem;
+            font-size: $mobileSmallText;
+        }
+    }
+}

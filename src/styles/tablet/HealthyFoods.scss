@@ -1,0 +1,25 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .healthy-foods {
+        padding: 3rem 1.5rem;
+
+        h2 {
+            font-size: $tabletHeading;
+            margin-bottom: 2rem;
+        }
+
+        .food-items {
+            .food-item {
+                width: 160px;
+                height: 55px;
+                margin: .6rem;
+
+                p {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}

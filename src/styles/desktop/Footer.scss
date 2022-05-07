@@ -4,7 +4,7 @@
 footer{
     width: 100vw;
     color: $offWhite;
-    background-color: $black;
+    background-color: rgb(21, 21, 21);
     @include flex(column, center);
     padding: 4rem;
 

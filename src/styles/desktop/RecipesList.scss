@@ -1,0 +1,67 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.recipes-title {
+    text-align: center;
+    color: $black;
+    font-size: $desktopHeading;
+    font-family: $raleway;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.recipes-container {
+    width: 100%;
+    max-width: 1350px;
+    padding: 0 2rem 4rem;
+    @include flex(row, center, space-evenly);
+    flex-wrap: wrap;
+}
+
+.recipe {
+    cursor: pointer;
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    height: 200px;
+    margin: 1rem;
+    border-radius: 30px;
+    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.10);
+    transition: all .15s ease;
+    @include flex(column);
+}
+
+.recipe:hover {
+    transform: scale(1.02);
+    box-shadow: -5px 8px 25px rgba(39, 39, 39, 0.15);
+}
+
+.recipe-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 30px 30px 0 0;
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(255, 112, 65, 0.3), rgb(29 34 13 / 0%), rgba(13, 125, 78, 0.35))
+    }
+}
+
+.recipe-title {
+    @include centerElements;
+
+    p {
+        padding: .65rem;
+        font-family: $poppins;
+        font-size: $desktopSmallText;
+        font-weight: 600;
+    }
+}

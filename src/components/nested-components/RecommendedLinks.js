@@ -1,31 +1,5 @@
 import { Link } from 'react-router-dom';
-import RecommendedLinkImage1 from '../../utils/images/recommended1.jpg';
-import RecommendedLinkImage2 from '../../utils/images/recommended2.jpg';
-import RecommendedLinkImage3 from '../../utils/images/recommended3.jpg';
-import RecommendedLinkImage4 from '../../utils/images/recommended4.jpg';
-
-const recommendations = [
-    {
-        imageSource: RecommendedLinkImage1,
-        title: 'Our Top 10 Healthiest Foods',
-        link: ''
-    },
-    {
-        imageSource: RecommendedLinkImage2,
-        title: 'Calories in Common Foods',
-        link: ''
-    },
-    {
-        imageSource: RecommendedLinkImage3,
-        title: 'Calories Meal Planning Samples',
-        link: ''
-    },
-    {
-        imageSource: RecommendedLinkImage4,
-        title: 'Most Calorie Dense Foods to Gain Weight',
-        link: ''
-    }
-]
+import {recommendations} from '../../utils/data';
 
 const RecommendedLinks = () => {
     return (
