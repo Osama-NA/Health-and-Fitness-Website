@@ -5,12 +5,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import { ScrollProvider } from './context/Scroll'
+import { RecipesProvider } from './context/Recipes'
 import { useState, useEffect } from 'react';
 
 
 const App = () => {
-
-  const [scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState(0); // used in header to apply background color on scroll
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -22,10 +22,12 @@ const App = () => {
     <div className="App">
       <BrowserRouter> {/* BrowserRouter allows routing between children elements */}
         <ScrollProvider>
-          <LoadingScreen />
-          <Header scroll={scroll} />
-          <Pages />
-          <Footer />
+          <RecipesProvider>
+            <LoadingScreen />
+            <Header scroll={scroll} />
+            <Pages />
+            <Footer />
+          </RecipesProvider>
         </ScrollProvider>
       </BrowserRouter>
     </div>

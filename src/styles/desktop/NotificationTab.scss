@@ -1,0 +1,25 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.notification-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(28, 28, 28, 0.75);
+    z-index: 15;
+    @include centerElements;
+
+    .container {
+        padding: 1rem 2rem;
+        background-color: $orange;
+        border-radius: 30px;
+
+        p {
+            color: $offWhite;
+            font-size: $desktopSmallText;
+            font-family: $poppins;
+        }
+    }
+}

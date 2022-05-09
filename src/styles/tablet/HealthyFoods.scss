@@ -21,5 +21,15 @@
                 }
             }
         }
+
+        .loader {
+            top: 5.8rem;
+
+            .circle {
+                width: 8px;
+                height: 8px;
+                margin: 0 .4rem;
+            }
+        }
     }
 }

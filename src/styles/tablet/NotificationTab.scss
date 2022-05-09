@@ -1,0 +1,15 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .notification-tab {
+        .container {
+            padding: .75rem 1.5rem;
+            border-radius: 30px;
+
+            p {
+                font-size: $tabletSmallText;
+            }
+        }
+    }
+}

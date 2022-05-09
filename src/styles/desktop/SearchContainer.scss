@@ -66,10 +66,44 @@
             background-color: $orange;
             height: 100%;
             border-radius: 50px;
+            transition: all .15s ease;
             
             svg{
                 color: #fff;
             }
         }
+        .search-button:hover{
+            background-color: #f06233;
+        }
     }
+}
+
+@keyframes fade-in-out{
+    0%, 100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+.loader{
+    position: absolute;
+    bottom: 1.25rem;
+    z-index: 3;
+    @include flex(row);
+
+    .circle{
+        width: 10px;
+        height: 10px;
+        margin: 0 .5rem;
+        border-radius: 30px;
+        background-color: #fff;
+        animation-name: fade-in-out;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .circle-2{ animation-delay: .2s; }
+    .circle-3{ animation-delay: .4s; }
 }

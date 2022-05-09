@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Loader from './Loader';
 
-const SearchContainer = () => {
+const SearchContainer = ({ searchForRecipes, hideLoader }) => {
     const [input, setInput] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
+
+
+    const handleSearchButton = () => {
+        setShowLoader(true);
+        searchForRecipes(input);
+        setInput('');
+    }
+
+    // hides loader when recipes are found
+    useEffect(() => {
+        setShowLoader(false);
+    }, [hideLoader])
 
     return (
         <section className="search-container">
@@ -14,11 +28,12 @@ const SearchContainer = () => {
                     value={input}
                     onChange={e => setInput(e.target.value)}
                 />
-                <div className="search-button">
+                <div className="search-button" onClick={handleSearchButton}>
                     <svg className="fa-solid fa-magnifying-glass"></svg>
                 </div>
             </div>
 
+            {showLoader ? <Loader /> : null}
             <div className="overlay"></div>
         </section>
     )

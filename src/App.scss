@@ -24,3 +24,7 @@ body{
   width: 100%;
   @include flex(column, center, flex-start);
 }
+
+.recipes{
+    position: relative;
+}

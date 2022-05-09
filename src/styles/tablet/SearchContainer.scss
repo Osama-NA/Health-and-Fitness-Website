@@ -4,14 +4,14 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .search-container {
         height: 300px;
-    
+
         h1 {
             font-size: 28px;
         }
-    
+
         .search {
             width: 450px;
-    
+
             input,
             .search-button {
                 padding: .7rem 1.65rem;
@@ -19,25 +19,12 @@
             }
         }
     }
-    
-    .healthy-foods {
-        padding: 3rem 1.5rem;
-    
-        h2 {
-            font-size: $tabletHeading;
-            margin-bottom: 2rem;
-        }
-    
-        .food-items {
-            .food-item {
-                width: 160px;
-                height: 55px;
-                margin: .6rem;
-    
-                p {
-                    font-size: 17px;
-                }
-            }
+
+    .loader {
+        .circle {
+            width: 8px;
+            height: 8px;
+            margin: 0 .4rem;
         }
     }
 }

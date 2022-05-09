@@ -20,30 +20,14 @@
             }
         }
     }
-    
-    .healthy-foods {
-        padding: 2rem 1rem;
-    
-        h2 {
-            font-size: $mobileHeading;
-            margin-bottom: 1.5rem;
-        }
-    
-        .food-items {
-        @include flex(row, stretch, center);
-            .food-item {
-                width: 125px;
-                height: 45px;
-                margin: .5rem;
-                border-radius: 10px;
-    
-                p {
-                    font-size: 14px;
-                }
-                .overlay{
-                    border-radius: 10px;
-                }
-            }
+
+    .loader{
+        bottom: 1rem;
+
+        .circle{
+            width: 8px;
+            height: 8px;
+            margin: 0 .35rem;
         }
     }
 }

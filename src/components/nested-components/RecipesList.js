@@ -1,15 +1,20 @@
-import recipeImage from '../../utils/images/salmon.jpg';
 
-const RecipesList = () => {
+const RecipesList = ({ recipes, recipesScroll}) => {
     return (
         <>
-            <h2 className="recipes-title">Recipes</h2>
+            <h2 className="recipes-title" ref={recipesScroll}>Recipes</h2>
             <section className="recipes-container">
-                <Recipe image={recipeImage} title="asffasfa" />
-                <Recipe image={recipeImage} title="asfasfassfas" />
-                <Recipe image={recipeImage} title="asfasfassfas" />
-                <Recipe image={recipeImage} title="asfasfassfas" />
-                <Recipe image={recipeImage} title="asfasfassfas" />
+                {
+                    recipes.map((recipe, i) => {
+                        return(
+                            <Recipe 
+                                key={i}
+                                image={recipe.image} 
+                                title={recipe.name}
+                            />
+                        )
+                    })
+                }
             </section>
         </>
     )

@@ -2,6 +2,7 @@
 @import '../partials/mixins';
 
 .healthy-foods {
+    position: relative;
     width: 100%;
     max-width: 1350px;
     padding: 4rem 2rem;
@@ -14,10 +15,7 @@
         margin-bottom: 3rem;
         font-weight: 800;
         letter-spacing: 1.5px;
-
-        span {
-            color: $orange;
-        }
+        @include centerElements;
     }
 
     .food-items {
@@ -51,7 +49,7 @@
                 position: absolute;
                 height: 100%;
                 width: 100%;
-                background-color: rgba(0, 106, 62, 0.6);
+                background-color: rgba(0, 57, 33, 0.6);
                 z-index: 1;
                 border-radius: 15px;
             }
@@ -60,6 +58,37 @@
         .food-item:hover {
             transform: scale(1.02);
             @include dropDownShadowHover;
+        }
+    }
+
+    .loader {
+        width: 100%;
+        position: absolute;
+        top: 8rem;
+        height: 10px;
+        left: 0;
+        z-index: 3;
+        @include flex(row, center, center);
+
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            margin: 0 .5rem;
+            border-radius: 30px;
+            background-color: $black;
+            animation-name: fade-in-out;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .circle-2 {
+            animation-delay: .2s;
+        }
+
+        .circle-3 {
+            animation-delay: .4s;
         }
     }
 }
