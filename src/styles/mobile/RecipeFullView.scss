@@ -1,0 +1,52 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {.full-view-recipe {
+        .close-button {
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 30px;
+            height: 30px;
+            border: 2px solid $offWhite;
+
+            .line {
+                height: 2px;
+                width: 12.5px;
+            }
+        }
+
+        .recipe-container {
+            width: 100%;
+            max-width: 350px;
+            height: 425px;
+            border-radius: 15px;
+
+            .image {
+                height: 125px;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .info {
+                height: 300px;
+                padding: .25rem 1.25rem;
+
+                .name,
+                .description,
+                .add-favorite,
+                .title {
+                    font-size: 12px;
+                    margin-bottom: .25rem;
+                }
+
+                .title {
+                    font-size: 16px;
+                    margin: .5rem 0 1rem;
+                }
+
+                .add-favorite {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -7,9 +7,9 @@ const SearchContainer = ({ searchForRecipes, hideLoader }) => {
 
 
     const handleSearchButton = () => {
-        setShowLoader(true);
         searchForRecipes(input);
         setInput('');
+        setShowLoader(true);
     }
 
     // hides loader when recipes are found

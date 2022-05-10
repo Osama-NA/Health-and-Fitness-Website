@@ -28,6 +28,7 @@ const Recipes = () => {
 
     const recipesScroll = useRef(); 
 
+    // Passed down to SearchContainer and HealthyFoods to request recipes upon recipe search or click on a food type
     const searchForRecipes = async (query) => {
         if (query === "") return;
 
@@ -43,15 +44,10 @@ const Recipes = () => {
         } else {
             const recipes = getRequiredRecipesData(returnedRecipes.hits);
             setRecipes(recipes);
-
-            // used in SearchContainer and HealthyFoods components to hide loader when recipes are found
-            setHideLoader(true);
         }
+        // used in SearchContainer and HealthyFoods components to hide loader when recipes are found
+        setHideLoader(true);
     }
-
-    useEffect(() => {
-
-    })
 
     // Scrolling to recipes when new recipes are displayed
     useEffect(() => {
@@ -64,7 +60,7 @@ const Recipes = () => {
         <main className="recipes">
             <SearchContainer searchForRecipes={searchForRecipes} hideLoader={hideLoader}  />
             <HealthyFoods searchForRecipes={searchForRecipes} hideLoader={hideLoader} />
-            {recipes.length > 0 ? <RecipesList recipes={recipes} recipesScroll={recipesScroll} /> : null}
+            {recipes.length > 0 ? <RecipesList recipes={recipes} recipesScroll={recipesScroll} title="Recipes" /> : null}
             {showNotificationTab ? <NotificationTab text="No recipes found for your search" setShowNotificationTab={setShowNotificationTab} /> : null}
         </main>
     )
@@ -80,12 +76,17 @@ const getRecipesSearchRequestRL = (query) => {
 
 const getRequiredRecipesData = (recipes) => {
     return recipes.map((recipe) => {
+        let largeImage = recipe.recipe.images.LARGE !== undefined ? 
+            recipe.recipe.images.LARGE.url :
+            recipe.recipe.images.REGULAR.url ;
+
         return {
             name: recipe.recipe.label,
             prepTime: recipe.recipe.totalTime,
             ingredients: recipe.recipe.ingredientLines,
             calories: recipe.recipe.calories,
-            image: recipe.recipe.images.SMALL.url
+            image: recipe.recipe.images.SMALL.url,
+            largeImage: largeImage
         }
     });
 }

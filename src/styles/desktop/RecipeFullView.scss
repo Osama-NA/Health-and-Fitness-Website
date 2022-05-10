@@ -1,0 +1,107 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.full-view-recipe {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 0 2rem;
+    z-index: 15;
+    @include centerElements;
+
+    .close-button {
+        cursor: pointer;
+        position: absolute;
+        top: 2.5rem;
+        right: 4rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2.5px solid $offWhite;
+        @include centerElements;
+
+        .line {
+            position: absolute;
+            height: 2.5px;
+            width: 20px;
+            background-color: $offWhite;
+        }
+
+        .line-1 {
+            transform: rotateZ(45deg);
+        }
+
+        .line-2 {
+            transform: rotateZ(-45deg);
+        }
+    }
+
+    .recipe-container {
+        width: 550px;
+        height: 600px;
+        background-color: $offWhite;
+        border-radius: 30px;
+        overflow: hidden;
+
+        .image {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .info {
+            width: 100%;
+            height: 400px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: .5rem 1.5rem;
+
+            .name,
+            .description,
+            .add-favorite,
+            .title {
+                font-family: $poppins;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: .5rem;
+            }
+
+            .description {
+                font-weight: 200;
+            }
+
+            .title {
+                width: 100%;
+                text-align: center;
+                font-weight: 600;
+                font-size: 22px;
+                margin: 1rem 0 2rem;
+            }
+
+            .add-favorite {
+                cursor: pointer;
+                color: $orange;
+                text-align: center;
+                padding: 1rem 0;
+                margin-top: 2rem;
+
+                span {
+                    padding-left: .5rem;
+                }
+            }
+        }
+
+        .info::-webkit-scrollbar {
+            width: 7.5px;
+            border-radius: 50%;
+        }
+
+        .info::-webkit-scrollbar-thumb {
+            background-color: $orange;
+        }
+    }
+
+}
