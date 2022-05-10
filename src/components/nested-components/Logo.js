@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 const Logo = () => {
     // Scrolls to top of home page if user is already on home page
     const handleLogoClick = () => {
-        if (window.location.pathname === "/") {
-            window.scrollTo(0, 0);
-        }
+        if (window.location.pathname === "/") window.scrollTo(0, 0);
     }
     
     return (

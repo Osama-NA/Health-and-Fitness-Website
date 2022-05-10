@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import { ScrollProvider } from './context/Scroll'
 import { RecipesProvider } from './context/Recipes'
+import { FavoritesProvider } from './context/Favorites'
 import { useState, useEffect } from 'react';
 
 
@@ -23,10 +24,12 @@ const App = () => {
       <BrowserRouter> {/* BrowserRouter allows routing between children elements */}
         <ScrollProvider>
           <RecipesProvider>
-            <LoadingScreen />
-            <Header scroll={scroll} />
-            <Pages />
-            <Footer />
+            <FavoritesProvider>
+              <LoadingScreen />
+              <Header scroll={scroll} />
+              <Pages />
+              <Footer />
+            </FavoritesProvider>
           </RecipesProvider>
         </ScrollProvider>
       </BrowserRouter>

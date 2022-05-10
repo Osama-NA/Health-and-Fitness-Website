@@ -3,6 +3,8 @@ import HomeImage from './nested-components/HomeImageContainer';
 import ServicesContainer from './nested-components/ServicesContainer';
 import ContactForm from './nested-components/ContactForm';
 import RecommendedLinks from './nested-components/RecommendedLinks';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom'
 
 // MAIN SECTION STYLES
 import '../styles/desktop/Main.scss';
@@ -19,7 +21,15 @@ import '../styles/desktop/Contact.scss';
 import '../styles/tablet/Contact.scss';
 import '../styles/mobile/Contact.scss';
 
-const Home = () => { 
+const Home = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === "/" && location.search !== "?to=Contact") {
+            window.scrollTo(0, 0)
+        }
+    },[location.pathname, location.search]);
+
     return (
         <main className="home">
             <Main />

@@ -1,10 +1,11 @@
 import '../../styles/desktop/RecipeFullView.scss'
 import '../../styles/tablet/RecipeFullView.scss'
 import '../../styles/mobile/RecipeFullView.scss'
+import AddToFavorites from './AddToFavorites';
 
 const CLASS_NAME = "full-view-recipe";
 
-const RecipeFullView = ({ title, calories, image, ingredients, prepTime, setShowClickedRecipe }) => {
+const RecipeFullView = ({ recipe, setShowClickedRecipe }) => {
 
     // Closes recipe full view when user click anywhere except the recipe container
     const handleClick = (e) => {
@@ -21,31 +22,29 @@ const RecipeFullView = ({ title, calories, image, ingredients, prepTime, setShow
             </div>
 
             <div className="recipe-container">
-                <div className="image" style={{ backgroundImage: `url('${image}')` }}></div>
+                <div className="image" style={{ backgroundImage: `url('${recipe.image}')` }}></div>
 
                 <div className="info">
-                    <h3 className="title">{title}</h3>
+                    <h3 className="title">{recipe.title}</h3>
                     <p className="name">Preparation time</p>
 
                     {/* show prep time if more than 0 */}
-                    <p className="description">{prepTime > 0 ? `${prepTime} minute(s)` : '-'}</p>
+                    <p className="description">{recipe.prepTime > 0 ? `${recipe.prepTime} minute(s)` : '-'}</p>
 
                     <p className="name">Ingredients</p>
                     {
-                        ingredients.map((ingredient, i) => {
+                        recipe.ingredients.map((ingredient, i) => {
                             return <p key={i} className="description">~ {ingredient}</p>
                         })
                     }
                     <p className="name">Calories</p>
-                    <p className="description">{calories}</p>
-                    
-                    <p className="add-favorite">
-                        <svg className="fa-solid fa-bookmark" />
-                        <span>Add to favorites</span>
-                    </p>
+                    <p className="description">{recipe.calories}</p>
+
+                    <AddToFavorites recipe={recipe} />
                 </div>
             </div>
         </div>
     )
 }
+
 export default RecipeFullView

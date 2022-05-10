@@ -2,9 +2,11 @@ import { createContext, useReducer } from 'react';
 
 const SET_FAVORITE_RECIPES = 'SET_FAVORITE_RECIPES';
 
+const FAVORITES = "favorites";
+
 const getStoredFavorites = () => {
     const favorites = localStorage.getItem("favorites");
-    return favorites ? favorites : []
+    return favorites ? JSON.parse(favorites) : []
 }
 
 const initialState = getStoredFavorites();
@@ -12,6 +14,7 @@ const initialState = getStoredFavorites();
 const reducer = (state, action) => {
     switch (action.type) {
         case SET_FAVORITE_RECIPES:
+            localStorage.setItem(FAVORITES, JSON.stringify(action.favorites));
             return action.favorites;
         default:
             return state;

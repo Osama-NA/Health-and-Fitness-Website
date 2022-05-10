@@ -39,11 +39,7 @@ const RecipesList = ({ recipes, recipesScroll, title}) => {
             {   
                 // renders RecipeFullView when setShowClickedRecipe() is set to True
                 showClickedRecipe && <RecipeFullView
-                    title={clickedRecipe.name}
-                    calories={clickedRecipe.calories}
-                    image={clickedRecipe.largeImage}
-                    ingredients={clickedRecipe.ingredients}
-                    prepTime={clickedRecipe.prepTime}
+                    recipe={clickedRecipe}
                     setShowClickedRecipe={setShowClickedRecipe}
                 />
             }

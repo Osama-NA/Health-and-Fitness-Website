@@ -3,7 +3,8 @@ import HealthyFoods from './nested-components/HealthyFoods';
 import SearchContainer from './nested-components/SearchContainer';
 import RecipesList from './nested-components/RecipesList';
 import NotificationTab from './nested-components/NotificationTab';
-import { RecipesContext } from '../context/Recipes'
+import { RecipesContext } from '../context/Recipes';
+import {useLocation} from 'react-router-dom'
 
 // SEARCH CONTAINER SECTION STYLES
 import '../styles/desktop/SearchContainer.scss';
@@ -26,7 +27,11 @@ const Recipes = () => {
 
     const { recipes, setRecipes } = useContext(RecipesContext);
 
+    const location = useLocation();
+
     const recipesScroll = useRef(); 
+
+    const healthyFoodsScroll = useRef();
 
     // Passed down to SearchContainer and HealthyFoods to request recipes upon recipe search or click on a food type
     const searchForRecipes = async (query) => {
@@ -56,10 +61,17 @@ const Recipes = () => {
         }
     }, [recipes]);
 
+    useEffect(() => {
+        if (location.pathname === "/Recipes") window.scrollTo(0, 0)
+        if (location.search === "?to=Healthy-foods") {
+            healthyFoodsScroll.current.scrollIntoView();
+        }
+    }, [location.pathname, location.search])
+
     return (
         <main className="recipes">
             <SearchContainer searchForRecipes={searchForRecipes} hideLoader={hideLoader}  />
-            <HealthyFoods searchForRecipes={searchForRecipes} hideLoader={hideLoader} />
+            <HealthyFoods searchForRecipes={searchForRecipes} hideLoader={hideLoader} healthyFoodsScroll={healthyFoodsScroll} />
             {recipes.length > 0 ? <RecipesList recipes={recipes} recipesScroll={recipesScroll} title="Recipes" /> : null}
             {showNotificationTab ? <NotificationTab text="No recipes found for your search" setShowNotificationTab={setShowNotificationTab} /> : null}
         </main>

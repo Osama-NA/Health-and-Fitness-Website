@@ -13,27 +13,26 @@ import yogurtImage from './images/yogurt.jpg';
 import lemonImage from './images/lemon.jpg'
 import quinoaImage from './images/quinoa.jpg'
 
-
 export const recommendations = [
     {
         imageSource: recommendedLinkImage1,
         title: 'Our Top 10 Healthiest Foods',
-        link: ''
+        link: '/Recipes?to=Healthy-foods'
     },
     {
         imageSource: recommendedLinkImage2,
         title: 'Calories in Common Foods',
-        link: ''
+        link: '/Calories?to=Common-foods-calories'
     },
     {
         imageSource: recommendedLinkImage3,
         title: 'Calories Meal Planning Samples',
-        link: ''
+        link: '/Calories?to=Meal-planning'
     },
     {
         imageSource: recommendedLinkImage4,
         title: 'Most Calorie Dense Foods to Gain Weight',
-        link: ''
+        link: '/Calories?to=Calorie-dense-foods'
     }
 ]
 
