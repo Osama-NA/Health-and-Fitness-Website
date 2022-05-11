@@ -25,7 +25,7 @@ const RecipeFullView = ({ recipe, setShowClickedRecipe }) => {
                 <div className="image" style={{ backgroundImage: `url('${recipe.image}')` }}></div>
 
                 <div className="info">
-                    <h3 className="title">{recipe.title}</h3>
+                    <h3 className="title">{recipe.name}</h3>
                     <p className="name">Preparation time</p>
 
                     {/* show prep time if more than 0 */}

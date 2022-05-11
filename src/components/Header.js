@@ -1,7 +1,8 @@
 import { useEffect, useCallback, useState } from 'react';
 import MenuButton from './nested-components/MenuButton';
 import Menu from './nested-components/NavMenu';
-import Logo from './nested-components/Logo'
+import Logo from './nested-components/Logo';
+import {Link} from 'react-router-dom';
 import '../styles/desktop/Header.scss';
 import '../styles/tablet/Header.scss';
 import '../styles/mobile/Header.scss';
@@ -18,9 +19,7 @@ const FILLED_BACKGROUND = {
 
 const isMobile = () => document.body.offsetWidth < 769;
 
-const Header = ({scroll}) => {
-    // state variable used to handle menu toggle on menu button click
-    const [isMenuOpened, setIsMenuOpened] = useState(false);
+const Header = ({ scroll, isMenuOpened, setIsMenuOpened }) => {
     // state variable used to handle header style toggle on scroll
     const [headerStyle, setHeaderStyle] = useState(null);
 
@@ -41,7 +40,7 @@ const Header = ({scroll}) => {
         <header style={headerStyle}>
             <MenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
             <Logo />
-            <Menu isMenuOpened={isMenuOpened} />
+            <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
             <Favorites />
         </header>
   )
@@ -49,10 +48,10 @@ const Header = ({scroll}) => {
 
 const Favorites = () => {
     return (
-        <div className="favorites">
-            <button>
+        <div className="favorites" onClick={() => window.scrollTo(0, 0)}>
+            <Link to="Favorites">
                 <svg className="fa-solid fa-bookmark" />
-            </button>
+            </Link>
         </div>
     )
 }

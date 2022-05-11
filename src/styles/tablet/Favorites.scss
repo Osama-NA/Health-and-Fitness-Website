@@ -1,0 +1,11 @@
+@import '../partials/variables';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .favorite-recipes {
+        padding-top: 3rem;
+
+        .no-favorites {
+            font-size: $tabletSmallText;
+        }
+    }
+}

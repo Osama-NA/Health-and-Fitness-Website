@@ -1,0 +1,12 @@
+@import '../partials/variables';
+
+@media (max-width: 768px) {
+    .favorite-recipes {
+        min-height: 60vh;
+        padding-top: 2.5rem;
+
+        .no-favorites {
+            font-size: $mobileSmallText;
+        }
+    }
+}

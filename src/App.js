@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 
 const App = () => {
   const [scroll, setScroll] = useState(0); // used in header to apply background color on scroll
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -26,9 +27,9 @@ const App = () => {
           <RecipesProvider>
             <FavoritesProvider>
               <LoadingScreen />
-              <Header scroll={scroll} />
+              <Header scroll={scroll} isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
               <Pages />
-              <Footer />
+              <Footer setIsMenuOpened={setIsMenuOpened} />
             </FavoritesProvider>
           </RecipesProvider>
         </ScrollProvider>

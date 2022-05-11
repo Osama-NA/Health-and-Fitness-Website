@@ -1,0 +1,23 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.favorite-recipes{
+    min-height: 55vh;
+    padding-top: 3.5rem;
+
+    .no-favorites{
+        text-align: center;
+        text-decoration: none;
+        color: $black;
+        font-size: $desktopSmallText;
+        font-family: $poppins;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        @include centerElements;
+
+        span{
+            color: $orange;
+            font-weight: 600;
+        }
+    }
+}

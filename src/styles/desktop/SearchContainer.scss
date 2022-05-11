@@ -1,11 +1,6 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-.recipes{
-    width: 100%;
-  @include flex(column, center, flex-start);
-}
-
 .search-container{
     position: relative;
     width: 100%;

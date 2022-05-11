@@ -3,8 +3,11 @@ import HomeImage from './nested-components/HomeImageContainer';
 import ServicesContainer from './nested-components/ServicesContainer';
 import ContactForm from './nested-components/ContactForm';
 import RecommendedLinks from './nested-components/RecommendedLinks';
-import { useEffect } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import { useLocation } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom';
+import { TO_SEARCH_PARAM } from '../utils/globalConstants';
+import { ScrollContext } from '../context/Scroll'
 
 // MAIN SECTION STYLES
 import '../styles/desktop/Main.scss';
@@ -23,18 +26,34 @@ import '../styles/mobile/Contact.scss';
 
 const Home = () => {
     const location = useLocation();
+    
+    const [searchParams] = useSearchParams();
+
+    const { scroll } = useContext(ScrollContext);
+
+    const contactFormRef = useRef(null);
 
     useEffect(() => {
         if (location.pathname === "/" && location.search !== "?to=Contact") {
             window.scrollTo(0, 0)
         }
-    },[location.pathname, location.search]);
+    }, [location.pathname, location.search]);
+
+    // Checks if browser search params contains "to"
+    // "to=Contact" is added to search params when user click "Contact" in navigation menu
+    // on page render or on update of global state(scroll), if "to=Contact", page scrolls to contact form
+    useEffect(() => {
+        const scrollTo = searchParams.get(TO_SEARCH_PARAM);
+        if (scrollTo === "Contact") {
+            contactFormRef.current.scrollIntoView();
+        }
+    }, [searchParams, scroll])
 
     return (
         <main className="home">
             <Main />
             <Services />
-            <Contact />
+            <Contact contactFormRef={contactFormRef} />
         </main>
     )
 }
@@ -57,11 +76,11 @@ const Services = () => {
     )
 }
 
-const Contact = () => {
+const Contact = ({ contactFormRef}) => {
     return(
         <>
             <section className="contact-section">
-                <ContactForm />
+                <ContactForm contactFormRef={contactFormRef} />
                 <RecommendedLinks />
             </section>
         </>

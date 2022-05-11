@@ -20,7 +20,7 @@ body{
   @include flex(column, center, flex-start);
 }
 
-.home, .recipes{
+.home, .recipes, .favorite-recipes{
   width: 100%;
   @include flex(column, center, flex-start);
 }
