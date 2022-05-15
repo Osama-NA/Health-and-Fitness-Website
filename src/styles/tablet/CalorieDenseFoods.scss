@@ -1,0 +1,29 @@
+@import '../partials/variables';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .calorie-dense-foods {
+        padding: 3rem 2rem;
+
+        h2 {
+            font-size: $tabletHeading;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            font-size: 14px;
+
+            thead,
+            tbody {
+                tr {
+                    td {
+                        padding: .5rem 1rem;
+                    }
+                }
+            }
+        }
+
+        .scroll-ref {
+            top: -45px;
+        }
+    }
+}

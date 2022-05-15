@@ -8,11 +8,17 @@ import '../styles/tablet/Footer.scss';
 import '../styles/mobile/Footer.scss';
 
 const Footer = ({ setIsMenuOpened }) => {
+
+  const handleFavoritesClick = () => {
+    window.scrollTo(0, 0)
+    setIsMenuOpened(false)
+  }
+
   return (
     <footer>
-      <Logo />
+      <Logo setIsMenuOpened={setIsMenuOpened}/>
       <MenuItems setIsMenuOpened={setIsMenuOpened} />
-      <Link to="Favorites" onClick={() => window.scrollTo(0, 0)}>Favorites</Link>
+      <Link to="Favorites" onClick={handleFavoritesClick}>Favorites</Link>
     </footer>
   )
 }

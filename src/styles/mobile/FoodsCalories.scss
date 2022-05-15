@@ -1,0 +1,43 @@
+@import '../partials/variables';
+
+@media (max-width: 768px) {
+    .foods-calories {
+        padding: 2.5rem 1rem;
+
+        h2 {
+            font-size: $mobileHeading;
+            margin-bottom: 1.25rem;
+        }
+
+        table {
+            font-size: 10px;
+
+            thead,
+            tbody {
+                tr {
+                    td:nth-child(1) {
+                        width: 100px;
+                    }
+
+                    td:nth-child(2) {
+                        width: 100px;
+                    }
+
+                    td {
+                        padding: .25rem .5rem;
+                    }
+                }
+            }
+
+            .category-row {
+                td {
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        .scroll-ref {
+            top: -35px;
+        }
+    }
+}

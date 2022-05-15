@@ -30,17 +30,20 @@
         width: 100%;
         height: 80px;
         @include flex(row, center, flex-end);
-        @include dropDownShadow;
+        @include dropDownShadow(.11);
         background-color: $green;
         border-radius: 20px;
         margin-bottom: 1.25rem;
 
         .goal {
+            height: 102%;
+            position: relative;
+            left: -1px;
+            bottom: -.5px;
             width: 100%;
             background-color: $offWhite;
-            height: 100%;
             @include centerElements;
-            border-radius: 20px;
+            border-radius: 18px;
             font-size: 22px;
             font-weight: 500;
         }

@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/desktop/LoadingScreen.scss';
 
-// Loads when the app loads to hide the elements initial load
-// fades out after 1500ms, then the screen is removed from DOM
 const LoadingScreen = () => {
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
+  //if loading screen if not removed after document loading
+  // loading screen is removed after 10 seconds
   useEffect(() => {
-    setTimeout(() => setShowLoadingScreen(false), 1500);
+    setTimeout(() => setShowLoadingScreen(false), 3000);
   }, []);
 
   return showLoadingScreen && <Screen />
 }
 
+
 const Screen = () => {
-  return(
+  return (
     <div className="loading-screen" >
       <h1>FoodFinder</h1>
     </div >

@@ -1,0 +1,64 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.meal-planning-samples {
+    position: relative;
+    width: 850px;
+    padding: 3.5rem 2rem;
+    @include flex(column, center);
+
+    h2 {
+        color: $black;
+        font-size: $desktopHeading;
+        font-family: $raleway;
+        margin-bottom: 2rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+    table {
+        font-size: 16px;
+        font-family: $poppins;
+
+        thead,
+        tbody {
+            tr {
+                td:nth-child(1) {
+                    width: 100px;
+                }
+
+                td:nth-child(2),
+                td:nth-child(3),
+                td:nth-child(4) {
+                    width: 250px;
+                }
+
+                td {
+                    padding: .75rem 1rem;
+                }
+            }
+        }
+
+        .heading-row {
+            color: $offWhite;
+            background-color: $orange;
+            font-weight: 500;
+        }
+
+        .total {
+            background-color: rgb(215, 215, 215);
+            td{
+                font-weight: 600;
+            }
+        }
+
+        .plan-row {
+            background-color: rgb(238, 238, 238);
+        }
+    }
+
+    .scroll-ref {
+        position: absolute;
+        top: -80px;
+    }
+}

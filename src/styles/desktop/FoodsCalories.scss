@@ -1,0 +1,72 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.foods-calories {
+    position: relative;
+    width: 640px;
+    padding: 3.5rem 2rem;
+    @include flex(column, center);
+
+    h2 {
+        color: $black;
+        font-size: $desktopHeading;
+        font-family: $raleway;
+        margin-bottom: 2rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+    table {
+        font-size: 16px;
+        font-family: $poppins;
+
+        thead,
+        tbody {
+            tr {
+                td:nth-child(1) {
+                    width: 360px;
+                }
+
+                td:nth-child(2) {
+                    width: 165px;
+                }
+
+                td:nth-child(2),
+                td:nth-child(3),
+                td:nth-child(4) {
+                    text-align: center;
+                }
+
+                td {
+                    padding: .75rem 1rem;
+                }
+            }
+        }
+
+        .heading-row {
+            color: $offWhite;
+            background-color: $orange;
+            font-weight: 500;
+        }
+
+        .category-row {
+            color: $orange;
+            font-weight: 600;
+
+            td {
+                padding-top: 1.75rem;
+            }
+        }
+
+        .food-row {
+            td {
+                background-color: rgb(238, 238, 238);
+            }
+        }
+    }
+
+    .scroll-ref {
+        position: absolute;
+        top: -80px;
+    }
+}

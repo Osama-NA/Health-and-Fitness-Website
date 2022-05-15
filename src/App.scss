@@ -20,11 +20,15 @@ body{
   @include flex(column, center, flex-start);
 }
 
-.home, .recipes, .favorite-recipes{
+.home, .recipes, .favorite-recipes, .calories{
   width: 100%;
   @include flex(column, center, flex-start);
 }
 
-.recipes{
+.recipes, .calories{
     position: relative;
+}
+
+.calories-sections{
+  @include flex(column, center);
 }

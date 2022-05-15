@@ -16,8 +16,8 @@
     border: $width solid $color;
 }
 
-@mixin dropDownShadow{
-    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.15);
+@mixin dropDownShadow($opacity: 0.2){
+    box-shadow: 0px 8px 25px rgba(84, 84, 84, $opacity);
 }
 
 @mixin dropDownShadowHover{

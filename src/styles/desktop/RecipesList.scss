@@ -28,14 +28,14 @@
     margin: 1rem;
     border-radius: 20px;
     background-color: $black;
-    box-shadow: -5px 8px 25px rgba(84, 84, 84, 0.10);
+    @include dropDownShadow(0.3);
     transition: all .15s ease;
     @include flex(column);
 }
 
 .recipe:hover {
     transform: scale(1.02);
-    box-shadow: -5px 8px 25px rgba(39, 39, 39, 0.15);
+    @include dropDownShadow(0.45);
 }
 
 .recipe-image {

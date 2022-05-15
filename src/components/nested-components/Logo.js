@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Logo = () => {
+const Logo = ({setIsMenuOpened}) => {
     // Scrolls to top of home page if user is already on home page
     const handleLogoClick = () => {
         if (window.location.pathname === "/") window.scrollTo(0, 0);
+        setIsMenuOpened(false)
     }
     
     return (

@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 const App = () => {
   const [scroll, setScroll] = useState(0); // used in header to apply background color on scroll
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -21,15 +22,17 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
+    <div className="App" onLoad={() => setShowLoadingScreen(false)}>
       <BrowserRouter> {/* BrowserRouter allows routing between children elements */}
         <ScrollProvider>
           <RecipesProvider>
             <FavoritesProvider>
-              <LoadingScreen />
+              
               <Header scroll={scroll} isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
               <Pages />
               <Footer setIsMenuOpened={setIsMenuOpened} />
+              
+              {showLoadingScreen && <LoadingScreen />}
             </FavoritesProvider>
           </RecipesProvider>
         </ScrollProvider>

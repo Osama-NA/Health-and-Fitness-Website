@@ -1,0 +1,50 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.calorie-dense-foods {
+    position: relative;
+    width: 640px;
+    padding: 3.5rem 2rem;
+    @include flex(column, center);
+
+    h2 {
+        color: $black;
+        text-align: center;
+        width: 25ch;
+        font-size: $desktopHeading;
+        font-family: $raleway;
+        margin-bottom: 2rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+    table {
+        font-size: 16px;
+        font-family: $poppins;
+
+        thead,
+        tbody {
+            tr {
+                td {
+                    background-color: rgb(238, 238, 238);
+                    padding: .75rem 1rem;
+                    width: 50%;
+                }
+            }
+        }
+
+        .heading-row {
+            color: $offWhite;
+            font-weight: 500;
+
+            td {
+                background-color: $orange;
+            }
+        }
+    }
+
+    .scroll-ref {
+        position: absolute;
+        top: -80px;
+    }
+}

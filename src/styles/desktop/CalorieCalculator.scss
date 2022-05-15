@@ -28,7 +28,7 @@
 
 .calculator-container {
     width: 100%;
-    @include dropDownShadow;
+    @include dropDownShadow(0.12);
     padding: 3rem;
     border-radius: 30px;
 

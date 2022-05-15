@@ -39,16 +39,22 @@ const Header = ({ scroll, isMenuOpened, setIsMenuOpened }) => {
     return (
         <header style={headerStyle}>
             <MenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
-            <Logo />
+            <Logo setIsMenuOpened={setIsMenuOpened} />
             <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
-            <Favorites />
+            <Favorites setIsMenuOpened={setIsMenuOpened} />
         </header>
   )
 }
 
-const Favorites = () => {
+const Favorites = ({ setIsMenuOpened}) => {
+
+    const handleClick= () => {
+        window.scrollTo(0, 0)
+        setIsMenuOpened(false);
+    }
+
     return (
-        <div className="favorites" onClick={() => window.scrollTo(0, 0)}>
+        <div className="favorites" onClick={handleClick} >
             <Link to="Favorites">
                 <svg className="fa-solid fa-bookmark" />
             </Link>
