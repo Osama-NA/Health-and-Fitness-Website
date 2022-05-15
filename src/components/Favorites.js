@@ -3,12 +3,10 @@ import { FavoritesContext } from '../context/Favorites'
 import RecipesList from './nested-components/RecipesList';
 import { Link } from 'react-router-dom';
 
-// HEALTHY FOODS SECTION STYLES
 import '../styles/desktop/RecipesList.scss';
 import '../styles/tablet/RecipesList.scss';
 import '../styles/mobile/RecipesList.scss';
 
-// HEALTHY FOODS SECTION STYLES
 import '../styles/desktop/Favorites.scss';
 import '../styles/tablet/Favorites.scss';
 import '../styles/mobile/Favorites.scss';

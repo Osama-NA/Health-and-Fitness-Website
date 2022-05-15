@@ -1,0 +1,64 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+.calorie-calculator-result {
+    position: relative;
+    @include flex(column, center);
+    padding: 3.5rem 2rem;
+
+    h2 {
+        color: $black;
+        font-size: $desktopHeading;
+        font-family: $raleway;
+        margin-bottom: 2.5rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+    .scroll-ref {
+        position: absolute;
+        top: -80px;
+    }
+}
+
+.results {
+    width: 100%;
+    @include flex(column, center);
+
+    .result-item {
+        font-family: poppins;
+        width: 100%;
+        height: 80px;
+        @include flex(row, center, flex-end);
+        @include dropDownShadow;
+        background-color: $green;
+        border-radius: 20px;
+        margin-bottom: 1.25rem;
+
+        .goal {
+            width: 100%;
+            background-color: $offWhite;
+            height: 100%;
+            @include centerElements;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .calories {
+            color: $offWhite;
+            @include flex(column, center, center);
+            width: 250px;
+
+            .text-1 {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .text-2 {
+                font-size: 12px;
+                font-weight: 300;
+            }
+        }
+    }
+}

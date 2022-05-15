@@ -9,17 +9,14 @@ import { useSearchParams } from 'react-router-dom';
 import { TO_SEARCH_PARAM } from '../utils/globalConstants';
 import { ScrollContext } from '../context/Scroll'
 
-// MAIN SECTION STYLES
 import '../styles/desktop/Main.scss';
 import '../styles/tablet/Main.scss';
 import '../styles/mobile/Main.scss';
 
-// SERVICES SECTION STYLES
 import '../styles/desktop/Services.scss';
 import '../styles/tablet/Services.scss';
 import '../styles/mobile/Services.scss';
 
-// CONTACT SECTION STYLES
 import '../styles/desktop/Contact.scss';
 import '../styles/tablet/Contact.scss';
 import '../styles/mobile/Contact.scss';

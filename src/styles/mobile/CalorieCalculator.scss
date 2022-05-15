@@ -1,0 +1,111 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (max-width: 768px) {
+    .calorie-calculator {
+        width: 100%;
+        max-width: 425px;
+        min-width: 326px;
+        padding: 2.5rem 1rem;
+
+        h2 {
+            font-size: $mobileHeading;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-calculator {
+            text-align: center;
+            font-size: $mobileSmallText;
+            line-height: 25px;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .calculator-container>* {
+        width: auto;
+    }
+
+    .calculator-container {
+        padding: 1.5rem;
+        border-radius: 20px;
+
+        .field-group {
+            @include flex(column);
+            margin-bottom: 0;
+
+            .input-group:nth-child(1) {
+                margin-right: 0;
+            }
+
+            .input-group:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+
+        .input-group {
+            font-size: 11px;
+            margin-bottom: 1.5rem;
+
+
+            input[type="number"],
+            select {
+                padding: .5rem 1rem;
+                font-size: 12px;
+            }
+
+            .radio-group {
+                label {
+                    padding: 0 0 0 .5rem;
+                }
+            }
+
+            span {
+                right: .5rem;
+                bottom: .5rem;
+                background-color: $offWhite;
+            }
+
+            select {
+                width: 100%;
+                padding: .5rem 1rem;
+
+                option {
+                    padding: .5rem 1rem;
+                }
+            }
+
+            .select-btn {
+                bottom: .25rem;
+                font-size: 18px;
+            }
+        }
+
+        .calculator-buttons {
+            margin: 1rem 0 0;
+
+            button {
+                padding: .5rem 0;
+                margin-left: 1rem;
+                font-size: 12px;
+            }
+
+            button[type="submit"] {
+                padding: .5rem 1rem;
+
+                svg {
+                    margin-right: .75rem;
+                }
+            }
+        }
+    }
+
+    .loader {
+        bottom: .5rem;
+
+        .circle {
+            width: 8px;
+            height: 8px;
+            margin: 0 .35rem;
+        }
+    }
+}

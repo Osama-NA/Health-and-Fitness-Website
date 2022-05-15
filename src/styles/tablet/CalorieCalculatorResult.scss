@@ -1,0 +1,39 @@
+@import '../partials/variables';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .calorie-calculator-result {
+        padding: 3rem 2rem;
+
+        h2 {
+            font-size: $tabletHeading;
+            margin-bottom: 2rem;
+        }
+        
+        .scroll-ref {
+            top: -45px;
+        }
+    }
+
+    .results {
+        .result-item {
+            height: 75px;
+            margin-bottom: 1rem;
+
+            .goal {
+                font-size: 20px;
+            }
+
+            .calories {
+                width: 200px;
+
+                .text-1 {
+                    font-size: 18px;
+                }
+
+                .text-2 {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

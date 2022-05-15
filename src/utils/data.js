@@ -88,3 +88,30 @@ export const healthyFoods = [
         query: 'Quinoa'
     },
 ]
+
+export const activityLevels = [
+    {
+        value: "Sedentary: little or no exercise",
+        level: "level_1"
+    },
+    {
+        value: "Exercise 1-3 times/week",
+        level: "level_2"
+    },
+    {
+        value: "Exercise 4-5 times/week",
+        level: "level_3"
+    },
+    {
+        value: "Daily exercise or intense exercise 3-4 times/week",
+        level: "level_4"
+    },
+    {
+        value: "Intense exercise 6-7 times/week",
+        level: "level_5"
+    },
+    {
+        value: "Very intense exercise daily, or physical job",
+        level: "level_6"
+    },
+]

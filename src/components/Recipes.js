@@ -6,17 +6,14 @@ import NotificationTab from './nested-components/NotificationTab';
 import { RecipesContext } from '../context/Recipes';
 import {useLocation} from 'react-router-dom'
 
-// SEARCH CONTAINER SECTION STYLES
 import '../styles/desktop/SearchContainer.scss';
 import '../styles/tablet/SearchContainer.scss';
 import '../styles/mobile/SearchContainer.scss';
 
-// HEALTHY FOODS SECTION STYLES
 import '../styles/desktop/HealthyFoods.scss';
 import '../styles/tablet/HealthyFoods.scss';
 import '../styles/mobile/HealthyFoods.scss';
 
-// HEALTHY FOODS SECTION STYLES
 import '../styles/desktop/RecipesList.scss';
 import '../styles/tablet/RecipesList.scss';
 import '../styles/mobile/RecipesList.scss';

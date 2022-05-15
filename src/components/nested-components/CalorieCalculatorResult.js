@@ -1,0 +1,37 @@
+import React from 'react'
+
+const CalorieCalculatorResult = ({ results, resultScroll }) => {
+    return (
+        <>
+            <section className="calorie-calculator-result">
+                <div ref={resultScroll} className="scroll-ref"></div>
+                
+                <h2>Results</h2>
+
+                <div className="results">
+                    {
+                        results.map((result, i) => {
+                            return <ResultItem key={i} goal={result.goal} calory={result.calory} />
+                        })
+                    }
+                </div>
+            </section>
+        </>
+    )
+}
+
+const ResultItem = ({ goal, calory }) => {
+    return (
+        <div className="result-item">
+            <div className="goal">
+                <p>{goal}</p>
+            </div>
+            <div className="calories">
+                <p className="text-1">{calory}</p>
+                <p className="text-2">Calories / day</p>
+            </div>
+        </div>
+    )
+}
+
+export default CalorieCalculatorResult

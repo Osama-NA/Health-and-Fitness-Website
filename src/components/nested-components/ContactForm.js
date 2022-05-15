@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import Input from './Input';
 import Message from './Message';
-// TODO: CHANGE TO CLIENT EMAIL MASK STRING
-const FORM_SUBMIT_REQUEST_URL = "https://formsubmit.co/ajax/621e0efc2a2244d5d0cf1b1d3dfc2fe3";
+
+const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/${process.env.REACT_APP_FORM_SUBMIT_EMAIL_MASK}`;
 
 const ContactForm = ({ contactFormRef}) => {
 

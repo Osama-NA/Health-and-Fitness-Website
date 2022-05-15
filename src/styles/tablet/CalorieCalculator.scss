@@ -1,0 +1,96 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .calorie-calculator {
+        width: 600px;
+        @include flex(column, center);
+        padding: 3rem 2rem;
+
+        h2 {
+            font-size: $tabletHeading;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-calculator {
+            font-size: $tabletSmallText;
+            line-height: 30px;
+            margin-bottom: 1.75rem;
+        }
+    }
+
+    .calculator-container {
+        padding: 2.5rem;
+
+        .field-group {
+
+            .input-group:nth-child(1) {
+                margin-right: .75rem;
+            }
+
+            .input-group:nth-child(2) {
+                margin-left: .75rem;
+            }
+        }
+
+        .input-group {
+            font-size: 14px;
+
+            input[type="number"],
+            select {
+                padding: .6rem 1.5rem;
+                font-size: 14px;
+            }
+
+            .radio-group {
+                label {
+                    padding: 0 0 0 .6rem;
+                }
+            }
+
+            span {
+                right: .75rem;
+                bottom: .75rem;
+            }
+
+            select {
+                padding: .6rem 1.5rem;
+
+                option {
+                    padding: .6rem 1.5rem;
+                }
+            }
+
+            .select-btn {
+                bottom: .35rem;
+                font-size: 20px;
+            }
+        }
+
+        .calculator-buttons {
+            margin: 1.25rem 0 0;
+
+            button {
+                padding: .6rem 0;
+                margin-left: 1.25rem;
+                font-size: 14px;
+            }
+
+            button[type="submit"] {
+                padding: .5rem 1.5rem;
+
+                svg {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    .loader {
+        .circle {
+            width: 8px;
+            height: 8px;
+            margin: 0 .4rem;
+        }
+    }
+}
