@@ -1,16 +1,19 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-.search-container{
+.search-container {
     position: relative;
     width: 100%;
     background-image: url('../../utils/images/recipes-background.jpg');
     background-size: cover;
     background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     height: 350px;
     @include flex(column, center, space-evenly);
 
-    .overlay{
+    .overlay {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -18,10 +21,12 @@
         background: linear-gradient(180deg, rgba(255, 112, 65, 0.5), rgb(29 34 13 / 0%), rgba(13, 125, 78, 0.5))
     }
 
-    .search, h1{
+    .search,
+    h1 {
         position: relative;
         z-index: 2;
     }
+
     h1 {
         width: 35ch;
         color: #fff;
@@ -32,29 +37,34 @@
         letter-spacing: 1.5px;
         text-align: center;
     }
-    .search{
+
+    .search {
         width: 500px;
         background-color: #fff;
         border-radius: 50px;
         @include flex(row, center, space-between);
         @include dropDownShadow;
 
-        input, .search-button{
+        input,
+        .search-button {
             padding: .8rem 1.75rem;
             font-size: $desktopSmallText;
         }
-        input{
+
+        input {
             font-family: poppins;
             width: 100%;
             background-color: transparent;
             outline: none;
             border: none;
         }
-        input::placeholder{
+
+        input::placeholder {
             color: rgb(155, 155, 155);
             font-family: poppins;
         }
-        .search-button{
+
+        .search-button {
             cursor: pointer;
             position: relative;
             right: -5px;
@@ -62,33 +72,37 @@
             height: 100%;
             border-radius: 50px;
             transition: all .15s ease;
-            
-            svg{
+
+            svg {
                 color: #fff;
             }
         }
-        .search-button:hover{
+
+        .search-button:hover {
             background-color: #f06233;
         }
     }
 }
 
-@keyframes fade-in-out{
-    0%, 100%{
+@keyframes fade-in-out {
+
+    0%,
+    100% {
         opacity: 0;
     }
-    50%{
+
+    50% {
         opacity: 1;
     }
 }
 
-.loader{
+.loader {
     position: absolute;
     bottom: 1.25rem;
     z-index: 3;
     @include flex(row);
 
-    .circle{
+    .circle {
         width: 10px;
         height: 10px;
         margin: 0 .5rem;
@@ -99,6 +113,12 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
     }
-    .circle-2{ animation-delay: .2s; }
-    .circle-3{ animation-delay: .4s; }
+
+    .circle-2 {
+        animation-delay: .2s;
+    }
+
+    .circle-3 {
+        animation-delay: .4s;
+    }
 }

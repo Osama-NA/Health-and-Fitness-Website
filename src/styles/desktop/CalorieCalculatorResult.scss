@@ -42,10 +42,19 @@
             bottom: -.5px;
             width: 100%;
             background-color: $offWhite;
-            @include centerElements;
+            @include flex(column, center, center);
             border-radius: 18px;
-            font-size: 22px;
-            font-weight: 500;
+
+            .title {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .weight {
+                color: $green;
+                font-size: 14px;
+                font-weight: 500;
+            }
         }
 
         .calories {

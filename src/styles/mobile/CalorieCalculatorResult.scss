@@ -23,7 +23,13 @@
 
             .goal {
                 border-radius: 15px;
-                font-size: 16px;
+                .title {
+                    font-size: 16px;
+                }
+
+                .weight {
+                    font-size: 10px;
+                }
             }
 
             .calories {

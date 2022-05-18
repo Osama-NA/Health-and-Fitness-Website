@@ -2,8 +2,12 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .meal-planning-samples {
-        width: 710px;
+        width: 550px;
         padding: 3rem 2rem;
+
+        article {
+            margin-bottom: 4rem;
+        }
 
         h2 {
             font-size: $tabletHeading;
@@ -16,25 +20,18 @@
             thead,
             tbody {
                 tr {
-                    td:nth-child(1) {
-                        width: 50px;
-                    }
-
-                    td:nth-child(2),
-                    td:nth-child(3),
-                    td:nth-child(4) {
-                        width:220px;
-                    }
+                td:nth-child(1){
+                    width: 150px;
+                }
+                td:nth-child(2){
+                    width: 400px;
+                }
 
                     td {
                         padding: .5rem 1rem;
                     }
                 }
             }
-        }
-
-        .scroll-ref {
-            top: -45px;
         }
     }
 }

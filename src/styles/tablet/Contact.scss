@@ -29,19 +29,23 @@
                 padding: .2rem;
                 font-size: 12px;
             }
+
             .message-label {
                 padding: 1rem .25rem;
                 left: 1.05rem;
             }
+
             input,
             textarea {
                 font-size: $tabletSmallText;
                 padding: .45rem 1.25rem .5rem 1.25rem;
             }
+
             input::placeholder,
             textarea::placeholder {
                 font-size: $tabletSmallText;
             }
+
             textarea {
                 padding: 1.39rem 1.25rem .75rem;
             }
@@ -55,8 +59,17 @@
             span {
                 margin-right: .75rem;
             }
+
             svg {
                 font-size: $tabletSmallText;
+            }
+        }
+
+        .loader {
+            .circle {
+                width: 8px;
+                height: 8px;
+                margin: 0 .4rem;
             }
         }
     }

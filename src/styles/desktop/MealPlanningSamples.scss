@@ -3,10 +3,16 @@
 
 .meal-planning-samples {
     position: relative;
-    width: 850px;
+    width: 650px;
     padding: 3.5rem 2rem;
     @include flex(column, center);
 
+    article{
+        width: 100%;
+        @include flex(column, center);
+        margin-bottom: 5rem;
+    }
+    
     h2 {
         color: $black;
         font-size: $desktopHeading;
@@ -22,17 +28,15 @@
 
         thead,
         tbody {
+            width: 100%;
             tr {
-                td:nth-child(1) {
-                    width: 100px;
+                width: 100%;
+                td:nth-child(1){
+                    width: 200px;
                 }
-
-                td:nth-child(2),
-                td:nth-child(3),
-                td:nth-child(4) {
-                    width: 250px;
+                td:nth-child(2){
+                    width: 400px;
                 }
-
                 td {
                     padding: .75rem 1rem;
                 }
@@ -55,10 +59,5 @@
         .plan-row {
             background-color: rgb(238, 238, 238);
         }
-    }
-
-    .scroll-ref {
-        position: absolute;
-        top: -80px;
     }
 }

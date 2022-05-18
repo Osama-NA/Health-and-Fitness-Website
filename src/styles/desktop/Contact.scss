@@ -1,7 +1,7 @@
 @import '../partials/variables';
 @import '../partials/mixins';
 
-.contact-section{
+.contact-section {
     position: relative;
     margin-top: -100px;
     width: 100%;
@@ -10,17 +10,18 @@
     @include flex(row, center, space-evenly);
 }
 
-.contact-form-container{
+.contact-form-container {
+    position: relative;
     margin: 0 1rem 0 3rem;
     width: 500px;
     @include flex(column, center);
 
-    .contact-ref{
+    .contact-ref {
         position: absolute;
         top: -20px;
     }
 
-    h2{
+    h2 {
         color: $black;
         font-size: $desktopHeading;
         font-family: $raleway;
@@ -28,44 +29,51 @@
         font-weight: 800;
         letter-spacing: 1.5px;
 
-        span{
+        span {
             color: $orange;
         }
     }
 
-    .input-group{
+    .input-group {
         width: 100%;
         margin: 1.5rem 0;
         @include flex(row, center, space-between);
 
-        .input-field{
+        .input-field {
             width: 48%;
         }
     }
-    .input-field{
+
+    .input-field {
         position: relative;
         width: 100%;
 
-        label, input, textarea{
+        label,
+        input,
+        textarea {
             font-family: poppins;
         }
-        label{
+
+        label {
             position: absolute;
             top: -4px;
             left: 1.5rem;
             line-height: 0;
             color: $orange;
             background-color: $offWhite;
-            padding:.25rem;
+            padding: .25rem;
             font-size: 14px;
             font-weight: 600;
         }
-        .message-label{
+
+        .message-label {
             width: 100%;
             padding: 1rem .25rem;
             left: 1.3rem;
         }
-        input, textarea{
+
+        input,
+        textarea {
             width: 100%;
             @include border($black);
             outline: none;
@@ -74,25 +82,31 @@
             padding: .75rem 1.5rem;
             background-color: $offWhite;
         }
-        input::placeholder, textarea::placeholder{
+
+        input::placeholder,
+        textarea::placeholder {
             color: rgb(155, 155, 155);
             font-family: poppins;
             font-size: $desktopSmallText;
         }
-        textarea{
+
+        textarea {
             padding: 1.3rem 1.5rem .75rem;
             border-width: 0 0 2px 0;
             border-radius: 0;
             resize: none;
         }
+
         textarea::-webkit-scrollbar {
             width: 4px;
         }
+
         textarea::-webkit-scrollbar-thumb {
             background-color: $orange;
         }
     }
-    button{
+
+    button {
         cursor: pointer;
         width: 100%;
         opacity: .9;
@@ -108,26 +122,67 @@
         transition: all .2s;
         margin-top: 1.5rem;
 
-        span{
+        span {
             margin-right: .75rem;
         }
-        svg{
+
+        svg {
             font-size: 16px;
         }
     }
-    button:hover{
+
+    button:hover {
         opacity: 1;
+    }
+
+    @keyframes fade-in-out {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .loader {
+        position: absolute;
+        bottom: -2rem;
+        z-index: 3;
+        @include flex(row);
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            margin: 0 .5rem;
+            border-radius: 30px;
+            background-color: $orange;
+            animation-name: fade-in-out;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .circle-2 {
+            animation-delay: .2s;
+        }
+
+        .circle-3 {
+            animation-delay: .4s;
+        }
     }
 }
 
-.recommendations{
+.recommendations {
     max-width: 525px;
     @include flex(rows);
     flex-wrap: wrap;
     margin: 0 1rem;
 }
 
-.recommendation{
+.recommendation {
     position: relative;
     text-decoration: none;
     width: 230px;
@@ -141,7 +196,7 @@
     @include dropDownShadow;
     transition: all .15s ease;
 
-    h3{
+    h3 {
         position: relative;
         color: $offWhite;
         text-align: center;
@@ -153,7 +208,8 @@
         z-index: 2;
         letter-spacing: 2px;
     }
-    .overlay{
+
+    .overlay {
         opacity: .65;
         position: absolute;
         height: 100%;
@@ -162,7 +218,8 @@
         border-radius: 30px;
     }
 }
-.recommendation:hover{
+
+.recommendation:hover {
     transform: scale(1.02);
     @include dropDownShadowHover;
 }

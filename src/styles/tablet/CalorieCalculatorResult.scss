@@ -20,7 +20,13 @@
             margin-bottom: 1rem;
 
             .goal {
-                font-size: 20px;
+                .title {
+                    font-size: 20px;
+                }
+
+                .weight {
+                    font-size: 12px;
+                }
             }
 
             .calories {

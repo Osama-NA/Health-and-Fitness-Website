@@ -25,8 +25,8 @@ const getCalorieCalculatorApiRequestUrl = (data) => {
 }
 
 const validateFormData = (data) => {
-    if(data.age < 0 || data.age > 80){
-        alert('Age must be between 0 and 80')
+    if(data.age < 15 || data.age > 80){
+        alert('Age must be between 15 and 80')
         return false;
     }
     if(data.gender !== "male" && data.gender !== "female"){
@@ -51,28 +51,34 @@ const getRequiredCalculationData = (data) => {
             calory: Math.ceil(data["maintain weight"])
         },
         {
-            goal: 'Extreme weight gain',
-            calory: Math.ceil(data["Extreme weight gain"].calory)
-        },
-        {
-            goal: 'Extreme weight loss',
-            calory: Math.ceil(data["Extreme weight loss"].calory)
-        },
-        {
-            goal: 'Mild weight gain',
-            calory: Math.ceil(data["Mild weight gain"].calory)
-        },
-        {
             goal: 'Mild weight loss',
-            calory: Math.ceil(data["Mild weight loss"].calory)
-        },
-        {
-            goal: 'Weight gain',
-            calory: Math.ceil(data["Weight gain"].calory)
+            calory: Math.ceil(data["Mild weight loss"].calory),
+            weight: `${data["Mild weight loss"]["loss weight"]} / week`
         },
         {
             goal: 'Weight loss',
-            calory: Math.ceil(data["Weight loss"].calory)
+            calory: Math.ceil(data["Weight loss"].calory),
+            weight: `${data["Weight loss"]["loss weight"]} / week`
+        },
+        {
+            goal: 'Extreme weight loss',
+            calory: Math.ceil(data["Extreme weight loss"].calory),
+            weight: `${data["Extreme weight loss"]["loss weight"]} / week`
+        },
+        {
+            goal: 'Mild weight gain',
+            calory: Math.ceil(data["Mild weight gain"].calory),
+            weight: `${data["Mild weight gain"]["gain weight"]} / week`
+        },
+        {
+            goal: 'Weight gain',
+            calory: Math.ceil(data["Weight gain"].calory),
+            weight: `${data["Weight gain"]["gain weight"]} / week`
+        },
+        {
+            goal: 'Extreme weight gain',
+            calory: Math.ceil(data["Extreme weight gain"].calory),
+            weight: `${data["Extreme weight gain"]["gain weight"]} / week`
         }
     ]
 }
@@ -124,7 +130,7 @@ const CalorieCalculator = ({ setCalculationResult}) => {
                 <div className="field-group">
                     <div className="input-group">
                         <label htmlFor="age">Age</label>
-                        <input type="number" max="80" min="0" name="age" required placeholder="0 - 80" />
+                        <input type="number" max="80" min="15" name="age" required placeholder="15 - 80" />
                     </div>
 
                     <div className="input-group">

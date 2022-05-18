@@ -1,10 +1,13 @@
 import {useState} from 'react';
 import Input from './Input';
 import Message from './Message';
+import Loader from './Loader';
 
-const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/${process.env.REACT_APP_FORM_SUBMIT_EMAIL_MASK}`;
+const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/inayat@unideb.hu`;
+// const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/${process.env.REACT_APP_FORM_SUBMIT_EMAIL_MASK}`;
 
-const ContactForm = ({ contactFormRef}) => {
+const ContactForm = ({ contactFormRef }) => {
+    const [showLoader, setShowLoader] = useState(false);
 
     // variables used to handle form input by user
     const [email, setEmail] = useState('');
@@ -21,8 +24,41 @@ const ContactForm = ({ contactFormRef}) => {
             alert('Please fill in the required fields');
             return;
         }
+        
+        sendEmail({ email, name, subject, message });
+    }
 
-        sendEmail({email, name, subject, message});
+
+    const sendEmail = async (emailData) => {
+        setShowLoader(true)
+        
+        const response = await fetch(FORM_SUBMIT_REQUEST_URL, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+        })
+
+        const data = await response.json();
+
+        console.log(data)
+        if (data.success === 'true') {
+            alert('Thank you for your feedback!')
+        } else {
+            alert(data.message)
+        }
+
+        resetContactForm();
+        setShowLoader(false)
+    }
+
+    const resetContactForm = () => {
+        setEmail('')
+        setName('')
+        setSubject('')
+        setMessage('')
     }
 
     return(
@@ -39,6 +75,8 @@ const ContactForm = ({ contactFormRef}) => {
 
             <Message value={message} handleChange={setMessage} />
             <Button />
+
+            {showLoader ? <Loader /> : null}
         </form>
     )
 }
@@ -50,21 +88,6 @@ const Button = () => {
             <svg className="fa-solid fa-paper-plane"></svg>
         </button>
     )
-}
-
-const sendEmail = async (emailData) => {
-    const response = await fetch(FORM_SUBMIT_REQUEST_URL, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(emailData)
-    })
-
-    const data = await response.json();
-
-    if(data.message) alert(data.message);
 }
 
 export default ContactForm;

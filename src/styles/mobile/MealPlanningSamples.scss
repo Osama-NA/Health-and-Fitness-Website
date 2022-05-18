@@ -2,8 +2,12 @@
 
 @media (max-width: 768px) {
     .meal-planning-samples {
-        width: 400px;
+        width: 340px;
         padding: 2.5rem 1rem;
+
+        article {
+            margin-bottom: 2.5rem;
+        }
 
         h2 {
             text-align: center;
@@ -18,13 +22,11 @@
             tbody {
                 tr {
                     td:nth-child(1) {
-                        width: 40px;
+                        width: 80px;
                     }
 
-                    td:nth-child(2),
-                    td:nth-child(3),
-                    td:nth-child(4) {
-                        width: 120px;
+                    td:nth-child(2) {
+                        width: 260px;
                     }
 
                     td {
@@ -32,10 +34,6 @@
                     }
                 }
             }
-        }
-
-        .scroll-ref {
-            top: -35px;
         }
     }
 }

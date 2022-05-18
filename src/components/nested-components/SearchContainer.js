@@ -6,6 +6,8 @@ const SearchContainer = ({ searchForRecipes, hideLoader }) => {
     const [showLoader, setShowLoader] = useState(false);
 
     const handleSearchButton = () => {
+        if(input === '') return
+        
         searchForRecipes(input);
         setInput('');
         setShowLoader(true);

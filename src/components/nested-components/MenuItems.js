@@ -29,6 +29,7 @@ const MenuItems = ({ setIsMenuOpened}) => {
       <>
           <Link to="Recipes" onClick={handleMenuItemClick}>Recipes</Link>
           <Link to="Calories" onClick={handleMenuItemClick}>Calories</Link>
+          <Link to="Meal-planning" onClick={handleMenuItemClick}>Meal planning</Link>
           <Link to={`/?${TO_SEARCH_PARAM}=Contact`} onClick={handleContactClick}>Contact</Link>
       </>
   )

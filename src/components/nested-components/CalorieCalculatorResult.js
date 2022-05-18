@@ -11,7 +11,12 @@ const CalorieCalculatorResult = ({ results, resultScroll }) => {
                 <div className="results">
                     {
                         results.map((result, i) => {
-                            return <ResultItem key={i} goal={result.goal} calory={result.calory} />
+                            return <ResultItem 
+                                        key={i} 
+                                        goal={result.goal} 
+                                        calory={result.calory}
+                                        weight={result.weight}
+                                    />
                         })
                     }
                 </div>
@@ -20,11 +25,12 @@ const CalorieCalculatorResult = ({ results, resultScroll }) => {
     )
 }
 
-const ResultItem = ({ goal, calory }) => {
+const ResultItem = ({ goal, calory, weight }) => {
     return (
         <div className="result-item">
             <div className="goal">
-                <p>{goal}</p>
+                <p className="title">{goal}</p>
+                {weight ? <p className="weight">{weight}</p> : null}
             </div>
             <div className="calories">
                 <p className="text-1">{calory}</p>

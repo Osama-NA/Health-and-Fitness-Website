@@ -3,6 +3,7 @@
 
 @media (max-width: 599px) {
     .main-section {
+        min-height: 650px;
         top: -55px;
         @include flex(column-reverse, center, space-evenly);
     }

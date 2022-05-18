@@ -2,7 +2,6 @@ import CalorieCalculator from './nested-components/CalorieCalculator';
 import CalorieCalculatorResult from './nested-components/CalorieCalculatorResult';
 import FoodsCalories from './nested-components/FoodsCalories';
 import CalorieDenseFoods from './nested-components/CalorieDenseFoods';
-import MealPlanningSamples from './nested-components/MealPlanningSamples';
 import React, {useEffect, useState, useRef} from 'react';
 import { useLocation } from 'react-router-dom'
 
@@ -18,10 +17,6 @@ import '../styles/desktop/FoodsCalories.scss'
 import '../styles/tablet/FoodsCalories.scss';
 import '../styles/mobile/FoodsCalories.scss';
 
-import '../styles/desktop/MealPlanningSamples.scss'
-import '../styles/tablet/MealPlanningSamples.scss';
-import '../styles/mobile/MealPlanningSamples.scss';
-
 import '../styles/desktop/CalorieDenseFoods.scss'
 import '../styles/tablet/CalorieDenseFoods.scss';
 import '../styles/mobile/CalorieDenseFoods.scss';
@@ -34,16 +29,12 @@ const Calories = () => {
     const resultScroll = useRef(); // used to scroll to results when they're displayed
 
     const foodsCaloriesScroll = useRef();
-    const mealPlanningSamplesScroll = useRef();
     const calorieDenseFoodsScroll = useRef();
 
     useEffect(() => {
         if (location.pathname === "/Calories") window.scrollTo(0, 0)
         if (location.search === "?to=Common-foods-calories") {
             scrollTo(foodsCaloriesScroll)
-        }
-        if (location.search === "?to=Meal-planning") {
-            scrollTo(mealPlanningSamplesScroll)
         }
         if (location.search === "?to=Calorie-dense-foods") {
             scrollTo(calorieDenseFoodsScroll)
@@ -71,7 +62,6 @@ const Calories = () => {
             <section className="calories-sections">
                 <FoodsCalories foodsCaloriesScroll={foodsCaloriesScroll} />
                 <CalorieDenseFoods calorieDenseFoodsScroll={calorieDenseFoodsScroll} />
-                <MealPlanningSamples mealPlanningSamplesScroll={mealPlanningSamplesScroll} />
             </section>
         </main>
     )
