@@ -3,8 +3,7 @@ import Input from './Input';
 import Message from './Message';
 import Loader from './Loader';
 
-const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/inayat@unideb.hu`;
-// const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/${process.env.REACT_APP_FORM_SUBMIT_EMAIL_MASK}`;
+const FORM_SUBMIT_REQUEST_URL = `https://formsubmit.co/ajax/${process.env.REACT_APP_FORM_SUBMIT_EMAIL_MASK}`;
 
 const ContactForm = ({ contactFormRef }) => {
     const [showLoader, setShowLoader] = useState(false);
