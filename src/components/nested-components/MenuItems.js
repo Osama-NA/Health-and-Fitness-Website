@@ -1,6 +1,5 @@
 import React, { useContext} from 'react'
 import { Link } from 'react-router-dom';
-import { TO_SEARCH_PARAM } from '../../utils/globalConstants';
 import { useLocation } from 'react-router-dom';
 import { ScrollContext } from '../../context/Scroll'
 
@@ -30,7 +29,7 @@ const MenuItems = ({ setIsMenuOpened}) => {
           <Link to="Recipes" onClick={handleMenuItemClick}>Recipes</Link>
           <Link to="Calories" onClick={handleMenuItemClick}>Calories</Link>
           <Link to="Meal-planning" onClick={handleMenuItemClick}>Meal planning</Link>
-          <Link to={`/?${TO_SEARCH_PARAM}=Contact`} onClick={handleContactClick}>Contact</Link>
+          <Link to={`/?to=Contact`} onClick={handleContactClick}>Contact</Link>
       </>
   )
 }

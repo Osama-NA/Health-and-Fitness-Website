@@ -6,7 +6,6 @@ import RecommendedLinks from './nested-components/RecommendedLinks';
 import { useEffect, useContext, useRef } from 'react';
 import { useLocation } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom';
-import { TO_SEARCH_PARAM } from '../utils/globalConstants';
 import { ScrollContext } from '../context/Scroll'
 
 import '../styles/desktop/Main.scss';
@@ -40,7 +39,7 @@ const Home = () => {
     // "to=Contact" is added to search params when user click "Contact" in navigation menu
     // on page render or on update of global state(scroll), if "to=Contact", page scrolls to contact form
     useEffect(() => {
-        const scrollTo = searchParams.get(TO_SEARCH_PARAM);
+        const scrollTo = searchParams.get("to");
         if (scrollTo === "Contact") {
             contactFormRef.current.scrollIntoView();
         }
