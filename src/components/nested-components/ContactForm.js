@@ -42,7 +42,6 @@ const ContactForm = ({ contactFormRef }) => {
 
         const data = await response.json();
 
-        console.log(data)
         if (data.success === 'true') {
             alert('Thank you for your feedback!')
         } else {
