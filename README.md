@@ -30,7 +30,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 FoodFinder's favicons for all devices are created using https://www.favicon-generator.org/
 
-## FONTS
+## Fonts
 Fonts are from google fonts: https://fonts.google.com/
 Fonts used: Courgette, Raleway, poppins
 
