@@ -4,42 +4,18 @@ Health and fitness website using ReactJs and Sass.
 
 > **Note**: This project is designed and developed for a client.
 
-## Project Setup
+## Docs
 
-In this project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Favicon
-
-FoodFinder's favicons for all devices are created using https://www.favicon-generator.org/
-
-## Fonts
+### Fonts
 Fonts are from google fonts: https://fonts.google.com/
 Fonts used: Courgette, Raleway, poppins
 
-## Icons
+### Icons
 
 This project uses Font Awesome icons.
 [Link to Font Awesome](https://fontawesome.com/)
 
-## Images 
+### Images 
 
 Home background image:
 - Source: pexels.com by Alleksana 
@@ -68,8 +44,8 @@ Recipes page background image:
 - Link: https://www.pexels.com/photo/assorted-fresh-vegetables-in-messy-composition-5678044/
 
 Tool used to compress images: https://imagecompressor.io/
-
-## Contact Form
+#
+### Contact Form
 
 Contact form is submitted using FORMSUBMIT: https://formsubmit.co/
 
@@ -79,8 +55,8 @@ https://formsubmit.co/ajax/[admin email mask here]
 admin email mask is found in the admin email email account which is used to activate form submit 
 
 The contact form has to be activated whenever deployed. After deployment, when a contact form is submitted the admin will get an activation link in his email, after clicking 'Activate form' the contact form will be activated and the admin will be able to receive feedback / messages.
-
-## Recipes Search
+#
+### Recipes Search
 
 Recipes are provided by the Edamam Recipe Search API (https://developer.edamam.com/edamam-recipe-api)
 
@@ -97,7 +73,7 @@ Recipes are fetched from this URL which requires a query and id + key of the reg
 The id and key are found in the registered account Dashboard > Applications > View
 
 Favorite recipes are stored in context api and then stored in localStorage which is done inside the favorites context reducer
-
-## Calorie Calculator
+#
+### Calorie Calculator
 
 The calorie calculator uses the Fitness Calculator from RapidAPI (https://rapidapi.com/malaaddincelik/api/fitness-calculator) which is free with unlimited requests
